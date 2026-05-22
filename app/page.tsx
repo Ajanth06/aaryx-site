@@ -82,18 +82,20 @@ export default function Page() {
             Digitale Beschaffungs- & Unternehmenssysteme
           </p>
           <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.96] text-[#171717] sm:text-7xl lg:text-8xl">
-            Procurement systems for companies that move fast.
+            Operational systems built for modern procurement teams.
           </h1>
           <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-[#3f3a32] sm:text-2xl">
-            Modern systems for procurement, suppliers and operational teams.
+            Digital infrastructure for suppliers, sourcing and business
+            operations.
           </p>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#3f3a32] sm:text-xl">
-            AARYX builds procurement workflows, operational dashboards and
-            digital infrastructure for importers, distributors and growing B2B
-            teams across Europe and Asia.
+            AARYX develops procurement workflows, supplier management systems
+            and scalable operational platforms for importers, distributors and
+            B2B companies across Europe and Asia.
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-[#3f3a32]/60 sm:text-base">
-            Moderne Systeme für Einkauf, Lieferanten und operative Teams.
+            Digitale Systeme für Einkauf, Lieferantenmanagement und operative
+            Unternehmensprozesse.
           </p>
           <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 border-y border-[#171717]/10 py-5">
             {[
