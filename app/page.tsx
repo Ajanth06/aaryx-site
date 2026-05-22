@@ -1,9 +1,5 @@
-git add .
-git commit -m "Initial AARYX website"
-
-
-
- [
+export default function Page() {
+  const services = [
     [
       "01",
       "Procurement Systems",
