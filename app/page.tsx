@@ -340,7 +340,7 @@ export default function Page() {
         className="bg-[#171717] px-5 py-10 text-white sm:px-8"
         id="contact"
       >
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-2xl font-black tracking-[0.18em]">AARYX</p>
             <p className="mt-2 text-sm text-white/55">
@@ -357,12 +357,22 @@ export default function Page() {
               An ISO 9001:2015 ausgerichtete Workflows.
             </p>
           </div>
-          <a
-            className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-bold text-[#171717] transition hover:bg-[#f7f3ea]"
-            href="mailto:hello@aaryx.com"
-          >
-            hello@aaryx.com
-          </a>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="flex gap-5 text-sm font-semibold text-white/55">
+              <a className="transition hover:text-white" href="/imprint">
+                Imprint / Impressum
+              </a>
+              <a className="transition hover:text-white" href="/privacy">
+                Privacy / Datenschutz
+              </a>
+            </div>
+            <a
+              className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-bold text-[#171717] transition hover:bg-[#f7f3ea]"
+              href="mailto:hello@aaryx.com"
+            >
+              hello@aaryx.com
+            </a>
+          </div>
         </div>
       </footer>
     </main>
