@@ -342,10 +342,17 @@ export default function Page() {
           <div>
             <p className="text-2xl font-black tracking-[0.18em]">AARYX</p>
             <p className="mt-2 text-sm text-white/55">
-              Based in Germany. Building systems for Europe and Asia.
+              Based in Germany. Building procurement and operational systems
+              for Europe and Asia.
             </p>
             <p className="mt-1 text-xs text-white/35">
-              Sitz in Deutschland. Systeme für Europa und Asien.
+              ISO 9001:2015 aligned workflows.
+            </p>
+            <p className="mt-2 text-xs text-white/35">
+              Sitz in Deutschland. Systeme für Einkauf und operative Prozesse.
+            </p>
+            <p className="mt-1 text-xs text-white/25">
+              An ISO 9001:2015 ausgerichtete Workflows.
             </p>
           </div>
           <a
