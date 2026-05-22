@@ -1,65 +1,252 @@
-import Image from "next/image";
+git add .
+git commit -m "Initial AARYX website"
 
-export default function Home() {
+
+
+ [
+    [
+      "01",
+      "Procurement Systems",
+      "Supplier workflows, sourcing operations and procurement infrastructure.",
+      "Digitale Beschaffungs- und Lieferantenprozesse für moderne Unternehmen.",
+    ],
+    [
+      "02",
+      "Operational Dashboards",
+      "Internal systems, tracking interfaces and business workflows.",
+      "Interne Systeme, Dashboards und strukturierte Unternehmensprozesse.",
+    ],
+    [
+      "03",
+      "Digital Infrastructure",
+      "Modern web platforms and scalable operational tools.",
+      "Moderne Webplattformen und skalierbare digitale Lösungen.",
+    ],
+  ];
+
+  const process = [
+    [
+      "Discover",
+      "Understanding workflows, bottlenecks and operational needs.",
+      "Analyse von Prozessen, Abläufen und operativen Anforderungen.",
+    ],
+    [
+      "Build",
+      "Designing focused systems with clarity and scalability.",
+      "Entwicklung klarer und skalierbarer Systeme.",
+    ],
+    [
+      "Launch",
+      "Shipping production-ready platforms and operational tools.",
+      "Bereitstellung produktionsreifer Plattformen und Tools.",
+    ],
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-[#f7f3ea] text-[#171717]">
+      <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+        <a className="text-xl font-black tracking-[0.18em]" href="#">
+          AARYX
+        </a>
+        <nav className="hidden items-center gap-8 text-sm font-medium text-[#171717]/70 md:flex">
+          <a className="transition hover:text-[#171717]" href="#services">
+            Services
+          </a>
+          <a className="transition hover:text-[#171717]" href="#process">
+            Process
+          </a>
+          <a className="transition hover:text-[#171717]" href="#contact">
+            Contact
+          </a>
+        </nav>
+        <a
+          className="rounded-full bg-[#171717] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2b2b2b]"
+          href="mailto:hello@aaryx.com"
+        >
+          Start project
+        </a>
+      </header>
+
+      <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-center gap-12 px-5 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:pb-16">
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
+            Digital procurement & operational systems
+          </p>
+          <p className="mt-2 text-sm font-medium text-[#3f3a32]/60">
+            Digitale Beschaffungs- & Unternehmenssysteme
+          </p>
+          <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.96] text-[#171717] sm:text-7xl lg:text-8xl">
+            Build smarter operational systems with AARYX.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+          <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-[#3f3a32] sm:text-2xl">
+            Moderne Unternehmenssysteme für effiziente Prozesse.
+          </p>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#3f3a32] sm:text-xl">
+            We create modern procurement, workflow and digital infrastructure
+            systems for businesses operating across Europe and Asia.
+          </p>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-[#3f3a32]/60 sm:text-base">
+            Wir entwickeln moderne Beschaffungs-, Workflow- und Digitalsysteme
+            für Unternehmen in Europa und Asien.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-[#d24b2f] px-7 text-sm font-bold text-white transition hover:bg-[#b83f28]"
+              href="mailto:hello@aaryx.com"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              <span>Start Project</span>
+              <span className="ml-2 text-white/65">Projekt starten</span>
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-[#171717]/20 px-7 text-sm font-bold text-[#171717] transition hover:border-[#171717]/50"
+              href="#services"
             >
-              Learning
-            </a>{" "}
-            center.
+              <span>View Services</span>
+              <span className="ml-2 text-[#171717]/45">Leistungen ansehen</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-xl">
+          <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#171717] p-4 shadow-2xl shadow-[#171717]/20 sm:p-6">
+            <div className="flex h-full flex-col rounded-[1.4rem] bg-[#fefaf1] p-4 sm:p-5">
+              <div className="flex items-center justify-between border-b border-[#171717]/10 pb-4">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#171717]/50">
+                    Operations board
+                  </p>
+                  <p className="mt-1 text-xl font-black">AARYX OS</p>
+                </div>
+                <div className="grid size-10 place-items-center rounded-full bg-[#d24b2f] text-sm font-black text-white">
+                  AX
+                </div>
+              </div>
+
+              <div className="grid flex-1 gap-4 py-5">
+                <div className="rounded-2xl bg-[#e2d7c3] p-4">
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <p className="text-sm font-bold text-[#171717]/55">
+                        Workflow clarity
+                      </p>
+                      <p className="mt-2 text-5xl font-black">38%</p>
+                    </div>
+                    <div className="flex h-20 items-end gap-1.5">
+                      <span className="h-8 w-4 rounded bg-[#171717]" />
+                      <span className="h-12 w-4 rounded bg-[#d24b2f]" />
+                      <span className="h-16 w-4 rounded bg-[#171717]" />
+                      <span className="h-20 w-4 rounded bg-[#d24b2f]" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-2xl bg-white p-4 shadow-sm">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
+                      Markets
+                    </p>
+                    <p className="mt-3 text-2xl font-black">EU / Asia</p>
+                  </div>
+                  <div className="rounded-2xl bg-[#171717] p-4 text-white">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
+                      Systems
+                    </p>
+                    <p className="mt-3 text-2xl font-black">Live</p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-[#171717]/10 bg-white p-4">
+                  <div className="mb-3 flex items-center justify-between">
+                    <p className="text-sm font-bold">Procurement flow</p>
+                    <span className="rounded-full bg-[#2d8b57]/12 px-3 py-1 text-xs font-bold text-[#2d8b57]">
+                      On track
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    <span className="block h-2 rounded-full bg-[#d24b2f]" />
+                    <span className="block h-2 w-4/5 rounded-full bg-[#171717]" />
+                    <span className="block h-2 w-2/3 rounded-full bg-[#e2d7c3]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="border-y border-[#171717]/10 bg-white px-5 py-14 sm:px-8"
+        id="services"
+      >
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
+          {services.map(([number, title, copy, german]) => (
+            <article key={title} className="border-t border-[#171717]/20 pt-5">
+              <p className="text-sm font-black text-[#d24b2f]">{number}</p>
+              <h2 className="mt-5 text-2xl font-black">{title}</h2>
+              <p className="mt-4 leading-7 text-[#3f3a32]">{copy}</p>
+              <p className="mt-3 text-sm leading-6 text-[#3f3a32]/55">
+                {german}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]"
+        id="process"
+      >
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
+            Process
+          </p>
+          <h2 className="mt-4 text-4xl font-black sm:text-5xl">
+            From operational complexity to working systems.
+          </h2>
+          <p className="mt-4 max-w-md text-sm leading-6 text-[#3f3a32]/60">
+            Von komplexen Abläufen zu klaren, nutzbaren Systemen.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {process.map(([step, copy, german]) => (
+            <div
+              className="min-h-40 rounded-2xl bg-[#171717] p-5 text-white"
+              key={step}
+            >
+              <p className="text-2xl font-black">{step}</p>
+              <p className="mt-4 text-sm leading-6 text-white/70">
+                {copy}
+              </p>
+              <p className="mt-3 text-xs leading-5 text-white/45">
+                {german}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer
+        className="bg-[#171717] px-5 py-10 text-white sm:px-8"
+        id="contact"
+      >
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-2xl font-black tracking-[0.18em]">AARYX</p>
+            <p className="mt-2 text-sm text-white/55">
+              Digital systems and operational infrastructure.
+            </p>
+            <p className="mt-1 text-xs text-white/35">
+              Digitale Systeme und operative Infrastruktur.
+            </p>
+          </div>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-bold text-[#171717] transition hover:bg-[#f7f3ea]"
+            href="mailto:hello@aaryx.com"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            hello@aaryx.com
           </a>
         </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
