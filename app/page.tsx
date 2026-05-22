@@ -85,7 +85,7 @@ export default function Page() {
             Procurement systems for companies that move fast.
           </h1>
           <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-[#3f3a32] sm:text-2xl">
-            Moderne Systeme für Einkauf, Lieferanten und operative Teams.
+            Modern systems for procurement, suppliers and operational teams.
           </p>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#3f3a32] sm:text-xl">
             AARYX builds procurement workflows, operational dashboards and
@@ -93,8 +93,7 @@ export default function Page() {
             teams across Europe and Asia.
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-[#3f3a32]/60 sm:text-base">
-            Digitale Beschaffungs-, Workflow- und Unternehmenssysteme für
-            effiziente internationale Abläufe.
+            Moderne Systeme für Einkauf, Lieferanten und operative Teams.
           </p>
           <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 border-y border-[#171717]/10 py-5">
             {[
@@ -214,6 +213,20 @@ export default function Page() {
         className="border-y border-[#171717]/10 bg-white px-5 py-14 sm:px-8"
         id="services"
       >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-w-2xl">
+            <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
+              Services
+            </p>
+            <h2 className="mt-4 text-4xl font-black sm:text-5xl">
+              Systems for procurement and operations.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-[#3f3a32]/60">
+              Leistungen für Einkauf, Lieferantenprozesse und operative
+              Infrastruktur.
+            </p>
+          </div>
+        </div>
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
           {services.map(([number, title, copy, german]) => (
             <article key={title} className="border-t border-[#171717]/20 pt-5">
