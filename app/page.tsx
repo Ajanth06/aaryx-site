@@ -97,9 +97,9 @@ export default function Page() {
           </p>
           <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 border-y border-[#171717]/10 py-5">
             {[
+              ["Germany", "Base"],
               ["EU / Asia", "Markets"],
               ["B2B", "Focus"],
-              ["Ops", "Systems"],
             ].map(([value, label]) => (
               <div key={label}>
                 <p className="text-lg font-black">{value}</p>
@@ -342,10 +342,10 @@ export default function Page() {
           <div>
             <p className="text-2xl font-black tracking-[0.18em]">AARYX</p>
             <p className="mt-2 text-sm text-white/55">
-              Digital systems and operational infrastructure.
+              Based in Germany. Building systems for Europe and Asia.
             </p>
             <p className="mt-1 text-xs text-white/35">
-              Digitale Systeme und operative Infrastruktur.
+              Sitz in Deutschland. Systeme für Europa und Asien.
             </p>
           </div>
           <a
