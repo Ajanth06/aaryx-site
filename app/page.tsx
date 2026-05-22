@@ -137,7 +137,7 @@ export default function Page() {
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#171717]/50">
                     Supplier command center
                   </p>
-                  <p className="mt-1 text-xl font-black">Procurement Hub</p>
+                  <p className="mt-1 text-xl font-black">AARYX OS</p>
                 </div>
                 <div className="grid size-10 place-items-center rounded-full bg-[#d24b2f] text-sm font-black text-white">
                   AX
