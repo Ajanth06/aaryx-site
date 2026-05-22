@@ -1,3 +1,5 @@
+import { Logo } from "./components/logo";
+
 export default function Page() {
   const services = [
     [
@@ -48,9 +50,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[#f7f3ea] text-[#171717]">
       <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-        <a className="text-xl font-black tracking-[0.18em]" href="#">
-          AARYX
-        </a>
+        <Logo href="/" />
         <nav className="hidden items-center gap-8 text-sm font-medium text-[#171717]/70 md:flex">
           <a className="transition hover:text-[#171717]" href="#services">
             Services
@@ -137,7 +137,7 @@ export default function Page() {
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#171717]/50">
                     Supplier command center
                   </p>
-                  <p className="mt-1 text-xl font-black">AARYX OS</p>
+                  <p className="mt-1 text-xl font-black">Procurement Hub</p>
                 </div>
                 <div className="grid size-10 place-items-center rounded-full bg-[#d24b2f] text-sm font-black text-white">
                   AX

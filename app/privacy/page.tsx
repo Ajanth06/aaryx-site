@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "../components/logo";
 
 const sections = [
   [
@@ -23,9 +24,7 @@ export default function PrivacyPage() {
     <main className="min-h-screen bg-[#f7f3ea] px-5 py-8 text-[#171717] sm:px-8">
       <div className="mx-auto max-w-4xl">
         <header className="flex items-center justify-between border-b border-[#171717]/10 pb-6">
-          <Link className="text-xl font-black tracking-[0.18em]" href="/">
-            AARYX
-          </Link>
+          <Logo href="/" />
           <Link
             className="text-sm font-bold text-[#171717]/55 transition hover:text-[#171717]"
             href="/"
