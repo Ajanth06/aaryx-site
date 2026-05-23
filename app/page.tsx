@@ -47,6 +47,12 @@ export default function Page() {
     ],
   ];
 
+  const agentTasks = [
+    "Scanning supplier response times",
+    "Comparing quote terms",
+    "Checking delivery risk",
+  ];
+
   return (
     <main className="min-h-screen bg-[#f7f3ea] text-[#171717]">
       <header className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-y-4 px-5 py-5 sm:px-8 md:flex-nowrap">
@@ -135,71 +141,84 @@ export default function Page() {
               <div className="flex items-center justify-between border-b border-[#171717]/10 pb-4">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#171717]/50">
-                    Supplier command center
+                    AI procurement agent
                   </p>
                   <p className="mt-1 text-xl font-black">AARYX OS</p>
                 </div>
-                <div className="grid size-10 place-items-center rounded-full bg-[#d24b2f] text-sm font-black text-white">
-                  AX
+                <div className="flex items-center gap-2 rounded-full bg-[#171717] px-3 py-2 text-xs font-black text-white">
+                  <span className="size-2 rounded-full bg-[#d24b2f] motion-safe:animate-pulse" />
+                  LIVE
                 </div>
               </div>
 
-              <div className="grid flex-1 gap-4 py-5">
+              <div className="grid flex-1 content-between gap-3 py-4">
                 <div className="rounded-2xl bg-[#e2d7c3] p-4">
-                  <div className="flex items-end justify-between">
+                  <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-sm font-bold text-[#171717]/55">
-                        Supplier response
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
+                        Active analysis
                       </p>
-                      <p className="mt-2 text-5xl font-black">92%</p>
+                      <p className="mt-2 text-3xl font-black leading-none">
+                        3 quotes
+                      </p>
+                      <p className="mt-2 text-sm font-bold text-[#171717]/55">
+                        Compared in real time
+                      </p>
                     </div>
-                    <div className="flex h-20 items-end gap-1.5">
-                      <span className="h-8 w-4 rounded bg-[#171717]" />
-                      <span className="h-12 w-4 rounded bg-[#d24b2f]" />
-                      <span className="h-16 w-4 rounded bg-[#171717]" />
-                      <span className="h-20 w-4 rounded bg-[#d24b2f]" />
+                    <div className="grid size-16 place-items-center rounded-full bg-[#171717] text-sm font-black text-white">
+                      AI
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl bg-white p-4 shadow-sm">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-white p-3 shadow-sm">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
-                      Open RFQs
+                      RFQs
                     </p>
-                    <p className="mt-3 text-2xl font-black">24</p>
+                    <p className="mt-2 text-2xl font-black">24</p>
                   </div>
-                  <div className="rounded-2xl bg-[#171717] p-4 text-white">
+                  <div className="rounded-2xl bg-[#171717] p-3 text-white">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-                      Priority
+                      Risk
                     </p>
-                    <p className="mt-3 text-2xl font-black">7</p>
+                    <p className="mt-2 text-2xl font-black">1</p>
+                  </div>
+                  <div className="rounded-2xl bg-white p-3 shadow-sm">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
+                      Ready
+                    </p>
+                    <p className="mt-2 text-2xl font-black">8</p>
                   </div>
                 </div>
 
                 <div className="rounded-2xl border border-[#171717]/10 bg-white p-4">
                   <div className="mb-3 flex items-center justify-between">
-                    <p className="text-sm font-bold">Sourcing pipeline</p>
-                    <span className="rounded-full bg-[#2d8b57]/12 px-3 py-1 text-xs font-bold text-[#2d8b57]">
-                      On track
+                    <p className="text-sm font-bold">Live workflow</p>
+                    <span className="rounded-full bg-[#2d8b57]/12 px-3 py-1 text-xs font-bold text-[#2d8b57] motion-safe:animate-pulse">
+                      Running
                     </span>
                   </div>
-                  <div className="space-y-3">
-                    {[
-                      ["Request", "100%"],
-                      ["Supplier quote", "78%"],
-                      ["Approval", "54%"],
-                    ].map(([label, width]) => (
-                      <div key={label}>
-                        <div className="mb-1 flex justify-between text-xs font-bold text-[#171717]/45">
-                          <span>{label}</span>
-                          <span>{width}</span>
-                        </div>
-                        <div className="h-2 rounded-full bg-[#e2d7c3]">
-                          <span
-                            className="block h-2 rounded-full bg-[#d24b2f]"
-                            style={{ width }}
-                          />
+                  <div className="space-y-2.5">
+                    {agentTasks.map((task, index) => (
+                      <div className="flex items-center gap-3" key={task}>
+                        <span
+                          className="size-2 rounded-full bg-[#d24b2f] motion-safe:animate-pulse"
+                          style={{ animationDelay: `${index * 250}ms` }}
+                        />
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-xs font-bold text-[#171717]/60">
+                            {task}
+                          </p>
+                          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-[#e2d7c3]">
+                            <span
+                              className="block h-full rounded-full bg-[#d24b2f] motion-safe:animate-pulse"
+                              style={{
+                                animationDelay: `${index * 250}ms`,
+                                width: `${88 - index * 14}%`,
+                              }}
+                            />
+                          </div>
                         </div>
                       </div>
                     ))}
