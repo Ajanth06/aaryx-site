@@ -1,3 +1,4 @@
+import { LiveMarketClocks } from "./components/live-market-clocks";
 import { Logo } from "./components/logo";
 
 export default function Page() {
@@ -174,26 +175,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="rounded-2xl bg-white p-3 shadow-sm">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
-                      RFQs
-                    </p>
-                    <p className="mt-2 text-2xl font-black">24</p>
-                  </div>
-                  <div className="rounded-2xl bg-[#171717] p-3 text-white">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-                      Risk
-                    </p>
-                    <p className="mt-2 text-2xl font-black">1</p>
-                  </div>
-                  <div className="rounded-2xl bg-white p-3 shadow-sm">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
-                      Ready
-                    </p>
-                    <p className="mt-2 text-2xl font-black">8</p>
-                  </div>
-                </div>
+                <LiveMarketClocks />
 
                 <div className="rounded-2xl border border-[#171717]/10 bg-white p-4">
                   <div className="mb-3 flex items-center justify-between">
