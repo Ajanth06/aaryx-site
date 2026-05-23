@@ -49,19 +49,19 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-[#f7f3ea] text-[#171717]">
-      <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+      <header className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-y-4 px-5 py-5 sm:px-8 md:flex-nowrap">
         <Logo href="/" />
-        <nav className="hidden items-center gap-8 text-sm font-medium text-[#171717]/70 md:flex">
-          <a className="transition hover:text-[#171717]" href="#services">
+        <nav className="order-3 flex w-full items-center justify-between gap-x-3 gap-y-2 text-sm font-medium text-[#171717]/70 md:order-none md:w-auto md:gap-8">
+          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#services">
             Services
           </a>
-          <a className="transition hover:text-[#171717]" href="#audience">
+          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#audience">
             Who we help
           </a>
-          <a className="transition hover:text-[#171717]" href="#process">
+          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#process">
             Process
           </a>
-          <a className="transition hover:text-[#171717]" href="#contact">
+          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#contact">
             Contact
           </a>
         </nav>
