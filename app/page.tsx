@@ -153,20 +153,23 @@ export default function Page() {
 
               <div className="grid flex-1 content-between gap-3 py-4">
                 <div className="rounded-2xl bg-[#e2d7c3] p-4">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-end justify-between gap-4">
                     <div>
                       <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
-                        Active analysis
+                        Supplier response
                       </p>
-                      <p className="mt-2 text-3xl font-black leading-none">
-                        3 quotes
+                      <p className="mt-2 text-5xl font-black leading-none">
+                        92%
                       </p>
                       <p className="mt-2 text-sm font-bold text-[#171717]/55">
-                        Compared in real time
+                        AI-monitored trend
                       </p>
                     </div>
-                    <div className="grid size-16 place-items-center rounded-full bg-[#171717] text-sm font-black text-white">
-                      AI
+                    <div className="flex h-20 items-end gap-1.5">
+                      <span className="h-8 w-4 rounded bg-[#171717]" />
+                      <span className="h-12 w-4 rounded bg-[#d24b2f] motion-safe:animate-pulse" />
+                      <span className="h-16 w-4 rounded bg-[#171717]" />
+                      <span className="h-20 w-4 rounded bg-[#d24b2f] motion-safe:animate-pulse" />
                     </div>
                   </div>
                 </div>
