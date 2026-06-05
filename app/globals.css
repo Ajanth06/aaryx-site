@@ -25,7 +25,6 @@ body {
   overscroll-behavior-x: none;
   overflow-x: hidden;
   position: relative;
-  touch-action: pan-y;
   width: 100%;
 }
 

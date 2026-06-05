@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { HorizontalScrollLock } from "./components/horizontal-scroll-lock";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full overflow-x-hidden antialiased">
       <body className="overflow-x-hidden">
-        <HorizontalScrollLock />
         <div className="page-shell">{children}</div>
       </body>
     </html>
