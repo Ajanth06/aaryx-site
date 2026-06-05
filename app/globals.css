@@ -34,3 +34,49 @@ body {
     transform: translateY(0);
   }
 }
+
+@keyframes title-shine {
+  0% {
+    background-position: 140% center;
+  }
+
+  42%,
+  100% {
+    background-position: -40% center;
+  }
+}
+
+@keyframes title-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(210, 75, 47, 0));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 18px rgba(210, 75, 47, 0.18));
+  }
+}
+
+.hero-title-shine {
+  background-image: linear-gradient(
+    110deg,
+    #171717 0%,
+    #171717 36%,
+    #d24b2f 48%,
+    #fefaf1 52%,
+    #171717 64%,
+    #171717 100%
+  );
+  background-size: 240% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-title-shine {
+    animation:
+      title-shine 4.8s ease-in-out infinite,
+      title-glow 3.6s ease-in-out infinite;
+  }
+}

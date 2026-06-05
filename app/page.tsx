@@ -299,7 +299,7 @@ export default function Page() {
       <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-start gap-12 px-5 pb-20 pt-5 sm:px-8 sm:pt-8 lg:grid-cols-[0.95fr_1.05fr] lg:pb-24 lg:pt-10">
         <div className="motion-safe:animate-[fade-up_700ms_ease-out_both]">
           <SectionLabel>Procurement & international business</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-[3.15rem] font-black leading-[0.96] text-[#171717] min-[390px]:text-6xl sm:text-7xl lg:text-8xl">
+          <h1 className="hero-title-shine mt-6 max-w-4xl text-[3.15rem] font-black leading-[0.96] text-[#171717] min-[390px]:text-6xl sm:text-7xl lg:text-8xl">
             Procurement & Business Solutions Between Europe and Asia
           </h1>
           <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#3f3a32] sm:text-2xl sm:leading-9">
