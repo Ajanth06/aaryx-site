@@ -34,3 +34,22 @@ body {
     transform: translateY(0);
   }
 }
+
+@keyframes title-blink {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 0 rgba(210, 75, 47, 0);
+  }
+
+  50% {
+    opacity: 0.82;
+    text-shadow: 0 0 18px rgba(210, 75, 47, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-title-blink {
+    animation: title-blink 2.6s ease-in-out infinite;
+  }
+}
