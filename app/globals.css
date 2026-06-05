@@ -48,8 +48,39 @@ body {
   }
 }
 
+@keyframes logo-word-shine {
+  0% {
+    background-position: 160% center;
+  }
+
+  45%,
+  100% {
+    background-position: -60% center;
+  }
+}
+
+.logo-word-shine {
+  background-image: linear-gradient(
+    110deg,
+    #171717 0%,
+    #171717 34%,
+    #d24b2f 48%,
+    #fefaf1 52%,
+    #171717 66%,
+    #171717 100%
+  );
+  background-size: 240% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-title-blink {
     animation: title-blink 2.6s ease-in-out infinite;
+  }
+
+  .logo-word-shine {
+    animation: logo-word-shine 4.2s ease-in-out infinite;
   }
 }

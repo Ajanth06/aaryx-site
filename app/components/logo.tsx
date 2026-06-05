@@ -13,7 +13,7 @@ export function Logo({ href = "/" }: LogoProps) {
       <span className="grid size-9 place-items-center rounded-full bg-[#d24b2f] text-xs font-black text-white sm:size-10 sm:text-sm">
         AX
       </span>
-      <span className="text-lg font-black tracking-[0.16em] sm:text-xl sm:tracking-[0.18em]">
+      <span className="logo-word-shine text-lg font-black tracking-[0.16em] sm:text-xl sm:tracking-[0.18em]">
         AARYX
       </span>
     </Link>
