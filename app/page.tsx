@@ -73,9 +73,6 @@ function ProcurementDashboard() {
                 Supplier Command Center
               </p>
               <p className="mt-1 text-xl font-black">AARYX OS</p>
-              <p className="mt-1 text-[11px] font-black leading-tight text-[#d24b2f] sm:text-xs">
-                Alleine bist du gut. Mit AARYX bist du ein Superheld.
-              </p>
             </div>
             <span className="inline-flex items-center gap-2 rounded-full bg-[#171717] px-3 py-2 text-xs font-black text-white">
               <span className="size-2 rounded-full bg-[#d24b2f] motion-safe:animate-pulse" />
@@ -264,7 +261,7 @@ export default function Page() {
     <main className="min-h-screen w-full overflow-x-hidden bg-[#f7f3ea] text-[#171717]">
       <header className="sticky top-0 z-50 border-b border-[#171717]/10 bg-[#f7f3ea]/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-14 w-full max-w-7xl items-center justify-between gap-4 px-5 py-2 sm:px-8">
-          <Logo href="/" />
+          <Logo href="/" showClaim />
           <nav className="hidden min-w-0 items-center gap-8 text-sm font-medium text-[#171717]/70 md:flex">
             {navItems.map((item) => (
               <a
