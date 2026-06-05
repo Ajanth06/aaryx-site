@@ -230,7 +230,7 @@ function WorldMap() {
 }
 
 export default function Page() {
-  const navItems = ["Services", "Network", "Industries", "Founder", "Contact"];
+  const navItems = ["Services", "Network", "Industries", "Contact"];
 
   const trust = [
     ["Supplier Sourcing", "Structured supplier discovery and qualification across international markets.", "network"],
@@ -296,7 +296,7 @@ export default function Page() {
         </nav>
       </header>
 
-      <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-center gap-12 px-5 pb-20 pt-10 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:pb-24">
+      <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-start gap-12 px-5 pb-20 pt-5 sm:px-8 sm:pt-8 lg:grid-cols-[0.95fr_1.05fr] lg:pb-24 lg:pt-10">
         <div className="motion-safe:animate-[fade-up_700ms_ease-out_both]">
           <SectionLabel>Procurement & international business</SectionLabel>
           <h1 className="mt-6 max-w-4xl text-[3.15rem] font-black leading-[0.96] text-[#171717] min-[390px]:text-6xl sm:text-7xl lg:text-8xl">
@@ -412,34 +412,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="px-5 py-24 sm:px-8 lg:py-36" id="founder">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="overflow-hidden rounded-[1.5rem] border border-[#171717]/10 bg-white shadow-xl shadow-[#171717]/10">
-            <div className="flex aspect-[4/5] items-end bg-[#171717] p-8 text-white">
-              <div>
-                <p className="text-7xl font-black tracking-[0.02em]">AR</p>
-                <p className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-white/45">
-                  Founder portrait
-                </p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <SectionLabel>Founder</SectionLabel>
-            <h2 className="mt-5 text-4xl font-black sm:text-6xl">
-              Ajanth Ragunathan
-            </h2>
-            <p className="mt-3 text-xl font-bold text-[#3f3a32]/70">
-              Founder & Managing Director
-            </p>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#3f3a32]/70">
-              Background in regulated industries, quality management and
-              international procurement processes.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white px-5 py-24 sm:px-8 lg:py-36" id="industries">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
@@ -504,7 +476,7 @@ export default function Page() {
           <div>
             <p className="text-sm font-black">Company</p>
             <div className="mt-4 space-y-3 text-sm font-semibold text-[#3f3a32]/60">
-              <a className="block transition hover:text-[#171717]" href="#founder">
+              <a className="block transition hover:text-[#171717]" href="#industries">
                 About
               </a>
               <a className="block transition hover:text-[#171717]" href="mailto:hello@aaryx.com">
