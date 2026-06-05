@@ -55,7 +55,7 @@ export default function Page() {
   ];
 
   return (
-    <main className="h-[100svh] w-full overflow-x-hidden overflow-y-auto bg-[#f7f3ea] text-[#171717] [-webkit-overflow-scrolling:touch]">
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#f7f3ea] text-[#171717]">
       <header className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-4 px-5 py-5 sm:px-8 md:flex-nowrap">
         <Logo href="/" />
         <nav className="order-3 flex w-full min-w-0 flex-wrap items-center justify-start gap-x-5 gap-y-2 text-xs font-medium text-[#171717]/70 sm:text-sm md:order-none md:w-auto md:flex-nowrap md:justify-between md:gap-8">

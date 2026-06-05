@@ -21,8 +21,15 @@ body {
 html,
 body {
   background: var(--background);
-  height: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
 }
