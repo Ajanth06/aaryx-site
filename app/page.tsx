@@ -56,31 +56,47 @@ export default function Page() {
 
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-[#f7f3ea] text-[#171717]">
-      <header className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-4 px-5 py-5 sm:px-8 md:flex-nowrap">
-        <Logo href="/" />
-        <nav className="order-3 flex w-full min-w-0 flex-wrap items-center justify-start gap-x-5 gap-y-2 text-xs font-medium text-[#171717]/70 sm:text-sm md:order-none md:w-auto md:flex-nowrap md:justify-between md:gap-8">
-          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#services">
+      <header className="sticky top-0 z-50 border-b border-[#171717]/10 bg-[#f7f3ea]/90 backdrop-blur-xl">
+        <div className="mx-auto flex min-h-14 w-full max-w-7xl items-center justify-between gap-4 px-5 py-2 sm:px-8">
+          <Logo href="/" />
+          <nav className="hidden min-w-0 items-center gap-8 text-sm font-medium text-[#171717]/70 md:flex">
+            <a className="whitespace-nowrap transition hover:text-[#171717]" href="#services">
+              Services
+            </a>
+            <a className="whitespace-nowrap transition hover:text-[#171717]" href="#audience">
+              Who we help
+            </a>
+            <a className="whitespace-nowrap transition hover:text-[#171717]" href="#process">
+              Process
+            </a>
+            <a className="whitespace-nowrap transition hover:text-[#171717]" href="#contact">
+              Contact
+            </a>
+          </nav>
+          <a
+            className="shrink-0 rounded-full bg-[#171717] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#2b2b2b] sm:px-5 sm:text-sm"
+            href="mailto:hello@aaryx.com"
+          >
+            Start project
+          </a>
+        </div>
+        <nav className="mx-auto flex w-full max-w-7xl items-center gap-5 overflow-x-auto px-5 pb-2 text-xs font-medium text-[#171717]/60 [scrollbar-width:none] sm:px-8 md:hidden [&::-webkit-scrollbar]:hidden">
+          <a className="shrink-0 transition hover:text-[#171717]" href="#services">
             Services
           </a>
-          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#audience">
+          <a className="shrink-0 transition hover:text-[#171717]" href="#audience">
             Who we help
           </a>
-          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#process">
+          <a className="shrink-0 transition hover:text-[#171717]" href="#process">
             Process
           </a>
-          <a className="whitespace-nowrap transition hover:text-[#171717]" href="#contact">
+          <a className="shrink-0 transition hover:text-[#171717]" href="#contact">
             Contact
           </a>
         </nav>
-        <a
-          className="shrink-0 rounded-full bg-[#171717] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2b2b2b]"
-          href="mailto:hello@aaryx.com"
-        >
-          Start project
-        </a>
       </header>
 
-      <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-center gap-12 px-5 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:pb-16">
+      <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-center gap-12 px-5 pb-12 pt-8 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:pb-16">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#d24b2f] sm:text-sm sm:tracking-[0.28em]">
             Digital procurement & operational systems
