@@ -141,7 +141,7 @@ export default function Page() {
             <div className="flex h-full flex-col rounded-[1.4rem] bg-[#fefaf1] p-4 sm:p-5">
               <div className="flex items-start justify-between gap-4 border-b border-[#171717]/10 pb-4">
                 <div className="min-w-0">
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#171717]/50">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#171717]/50 sm:text-xs sm:tracking-[0.22em]">
                     AI procurement agent
                   </p>
                   <p className="mt-1 text-xl font-black">AARYX OS</p>
@@ -166,7 +166,7 @@ export default function Page() {
                 <div className="rounded-2xl bg-[#e2d7c3] p-4">
                   <div className="flex items-end justify-between gap-4">
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#171717]/45">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#171717]/45 sm:text-xs sm:tracking-[0.18em]">
                         Supplier response
                       </p>
                       <p className="mt-2 text-5xl font-black leading-none">

@@ -22,9 +22,7 @@ html,
 body {
   background: var(--background);
   max-width: 100%;
-  overscroll-behavior-x: none;
   overflow-x: hidden;
-  position: relative;
   width: 100%;
 }
 
@@ -34,21 +32,4 @@ html {
 
 body {
   min-height: 100%;
-}
-
-.page-shell {
-  background: var(--background);
-  min-height: 100dvh;
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
-}
-
-@supports (width: 100dvw) {
-  html,
-  body,
-  .page-shell {
-    max-width: 100dvw;
-    width: 100dvw;
-  }
 }
