@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full overflow-x-hidden">{children}</body>
+      <body className="h-full overflow-hidden">{children}</body>
     </html>
   );
 }
