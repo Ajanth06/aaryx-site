@@ -55,10 +55,10 @@ export default function Page() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f7f3ea] text-[#171717]">
-      <header className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-y-4 px-5 py-5 sm:px-8 md:flex-nowrap">
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#f7f3ea] text-[#171717]">
+      <header className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-4 px-5 py-5 sm:px-8 md:flex-nowrap">
         <Logo href="/" />
-        <nav className="order-3 flex w-full items-center justify-between gap-x-3 gap-y-2 text-sm font-medium text-[#171717]/70 md:order-none md:w-auto md:gap-8">
+        <nav className="order-3 flex w-full min-w-0 flex-wrap items-center justify-start gap-x-5 gap-y-2 text-xs font-medium text-[#171717]/70 sm:text-sm md:order-none md:w-auto md:flex-nowrap md:justify-between md:gap-8">
           <a className="whitespace-nowrap transition hover:text-[#171717]" href="#services">
             Services
           </a>
@@ -73,7 +73,7 @@ export default function Page() {
           </a>
         </nav>
         <a
-          className="rounded-full bg-[#171717] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2b2b2b]"
+          className="shrink-0 rounded-full bg-[#171717] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2b2b2b]"
           href="mailto:hello@aaryx.com"
         >
           Start project
@@ -82,13 +82,13 @@ export default function Page() {
 
       <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-center gap-12 px-5 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:pb-16">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#d24b2f] sm:text-sm sm:tracking-[0.28em]">
             Digital procurement & operational systems
           </p>
           <p className="mt-2 text-sm font-medium text-[#3f3a32]/60">
             Digitale Beschaffungs- & Unternehmenssysteme
           </p>
-          <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.96] text-[#171717] sm:text-7xl lg:text-8xl">
+          <h1 className="mt-5 max-w-4xl text-[3.25rem] font-black leading-[0.96] text-[#171717] min-[390px]:text-6xl sm:text-7xl lg:text-8xl">
             Operational systems built for modern procurement teams.
           </h1>
           <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-[#3f3a32] sm:text-2xl">
@@ -104,30 +104,30 @@ export default function Page() {
             Digitale Systeme für Einkauf, Lieferantenmanagement und operative
             Unternehmensprozesse.
           </p>
-          <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 border-y border-[#171717]/10 py-5">
+          <div className="mt-8 grid max-w-xl grid-cols-3 gap-2 border-y border-[#171717]/10 py-5 sm:gap-3">
             {[
               ["Germany", "Base"],
               ["EU / Asia", "Markets"],
               ["B2B", "Focus"],
             ].map(([value, label]) => (
               <div key={label}>
-                <p className="text-lg font-black">{value}</p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-[#3f3a32]/45">
+                <p className="text-base font-black sm:text-lg">{value}</p>
+                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#3f3a32]/45 sm:text-xs sm:tracking-[0.16em]">
                   {label}
                 </p>
               </div>
             ))}
           </div>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-9 flex max-w-full flex-col gap-3 sm:flex-row">
             <a
-              className="inline-flex h-12 items-center justify-center rounded-full bg-[#d24b2f] px-7 text-sm font-bold text-white transition hover:bg-[#b83f28]"
+              className="inline-flex h-12 w-full min-w-0 items-center justify-center rounded-full bg-[#d24b2f] px-5 text-sm font-bold text-white transition hover:bg-[#b83f28] sm:w-auto sm:px-7"
               href="mailto:hello@aaryx.com"
             >
               <span>Start Project</span>
               <span className="ml-2 text-white/65">Projekt starten</span>
             </a>
             <a
-              className="inline-flex h-12 items-center justify-center rounded-full border border-[#171717]/20 px-7 text-sm font-bold text-[#171717] transition hover:border-[#171717]/50"
+              className="inline-flex h-12 w-full min-w-0 items-center justify-center rounded-full border border-[#171717]/20 px-5 text-sm font-bold text-[#171717] transition hover:border-[#171717]/50 sm:w-auto sm:px-7"
               href="#services"
             >
               <span>View Services</span>
@@ -146,7 +146,12 @@ export default function Page() {
                   </p>
                   <p className="mt-1 text-xl font-black">AARYX OS</p>
                   <p className="mt-1 whitespace-nowrap text-[11px] font-black leading-none tracking-normal text-[#d24b2f] sm:text-xs">
-                    Alleine bist du gut. Mit AARYX bist du ein Superheld.
+                    <span className="sm:hidden">
+                      Mit AARYX bist du schneller.
+                    </span>
+                    <span className="hidden sm:inline">
+                      Alleine bist du gut. Mit AARYX bist du ein Superheld.
+                    </span>
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#171717] px-3 py-2 text-xs font-black text-white">
@@ -224,7 +229,7 @@ export default function Page() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#d24b2f] sm:text-sm sm:tracking-[0.28em]">
               Services
             </p>
             <h2 className="mt-4 text-4xl font-black sm:text-5xl">
@@ -256,7 +261,7 @@ export default function Page() {
       >
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#e87b61]">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#e87b61] sm:text-sm sm:tracking-[0.28em]">
               Who we help
             </p>
             <h2 className="mt-4 text-4xl font-black sm:text-5xl">
@@ -285,7 +290,7 @@ export default function Page() {
         id="process"
       >
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#d24b2f] sm:text-sm sm:tracking-[0.28em]">
             Process
           </p>
           <h2 className="mt-4 text-4xl font-black sm:text-5xl">
@@ -316,7 +321,7 @@ export default function Page() {
       <section className="border-t border-[#171717]/10 bg-white px-5 py-16 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#d24b2f] sm:text-sm sm:tracking-[0.28em]">
               Start
             </p>
             <h2 className="mt-4 text-4xl font-black sm:text-5xl">
@@ -365,7 +370,7 @@ export default function Page() {
             </p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <div className="flex gap-5 text-sm font-semibold text-white/55">
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-white/55">
               <a className="transition hover:text-white" href="/imprint">
                 Imprint / Impressum
               </a>
@@ -374,7 +379,7 @@ export default function Page() {
               </a>
             </div>
             <a
-              className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-bold text-[#171717] transition hover:bg-[#f7f3ea]"
+              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-white px-5 text-sm font-bold text-[#171717] transition hover:bg-[#f7f3ea] sm:w-auto sm:px-7"
               href="mailto:hello@aaryx.com"
             >
               hello@aaryx.com

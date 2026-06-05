@@ -157,10 +157,10 @@ export function LiveMarketClocks() {
           Live
         </span>
       </div>
-      <div className="space-y-2">
+      <div className="min-w-0 space-y-2">
         <MarketMap />
 
-        <div className="grid grid-cols-2 gap-1.5">
+        <div className="grid min-w-0 grid-cols-2 gap-1.5">
           {clocks.map((clock) => {
             const time = now
               ? getClockParts(now, clock.timeZone)
@@ -172,7 +172,10 @@ export function LiveMarketClocks() {
                 };
 
             return (
-              <div className="flex items-center gap-2 rounded-xl bg-[#fefaf1] p-1.5" key={clock.city}>
+              <div
+                className="flex min-w-0 items-center gap-2 rounded-xl bg-[#fefaf1] p-1.5"
+                key={clock.city}
+              >
                 <div className="grid size-9 shrink-0 place-items-center rounded-full bg-[#171717]">
                   <div className="relative size-6 rounded-full border border-white/15 bg-[#171717]">
                     <span className="absolute left-1/2 top-1 h-1 w-px -translate-x-1/2 rounded-full bg-white/35" />
