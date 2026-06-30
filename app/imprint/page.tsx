@@ -3,10 +3,13 @@ import { Logo } from "../components/logo";
 
 const details = [
   ["Provider", "AARYX"],
-  ["Address", "TODO: Street, postal code, city, Germany"],
-  ["Email", "hello@aaryx.com"],
-  ["Represented by", "TODO: Name of responsible person"],
-  ["VAT ID", "TODO: Add VAT ID if available"],
+  ["Address", "Max-Reger-Straße 14, 73430 Aalen, Germany"],
+  ["Email", "contact@aaryx.com"],
+  ["Represented by", "Ajanth Ragunathan"],
+  [
+    "VAT ID",
+    "VAT Identification Number according to §27a German VAT Act: Currently pending.",
+  ],
 ];
 
 export default function ImprintPage() {
@@ -31,8 +34,8 @@ export default function ImprintPage() {
             Imprint / Impressum
           </h1>
           <p className="mt-5 max-w-2xl text-sm leading-6 text-[#3f3a32]/60">
-            This page is a layout preview. Replace all TODO fields with the
-            legally required company information before using it in production.
+            Legal information for AARYX according to German disclosure
+            requirements.
           </p>
         </section>
 
@@ -54,8 +57,7 @@ export default function ImprintPage() {
           <div>
             <h2 className="text-xl font-black">Responsible for content</h2>
             <p className="mt-3 text-sm leading-6 text-[#3f3a32]/65">
-              TODO: Add the person responsible for editorial content according
-              to the applicable German legal requirements.
+              Ajanth Ragunathan
             </p>
           </div>
           <div>
