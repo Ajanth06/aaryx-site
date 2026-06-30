@@ -9,8 +9,8 @@ const sections = [
   ],
   [
     "Contact",
-    "For privacy-related requests, contact hello@aaryx.com until the final legal contact details are added.",
-    "Für Datenschutzanfragen vorläufig hello@aaryx.com nutzen, bis die finalen Kontaktdaten ergänzt sind.",
+    "For privacy-related requests, contact contact@aaryx.de until the final legal contact details are added.",
+    "Für Datenschutzanfragen vorläufig contact@aaryx.de nutzen, bis die finalen Kontaktdaten ergänzt sind.",
   ],
   [
     "Data processing",

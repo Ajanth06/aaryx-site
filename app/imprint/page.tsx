@@ -4,7 +4,7 @@ import { Logo } from "../components/logo";
 const details = [
   ["Provider", "AARYX"],
   ["Address", "Max-Reger-Straße 14, 73430 Aalen, Germany"],
-  ["Email", "contact@aaryx.com"],
+  ["Email", "contact@aaryx.de"],
   ["Represented by", "Ajanth Ragunathan"],
   [
     "VAT ID",

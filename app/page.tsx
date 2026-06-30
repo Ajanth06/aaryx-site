@@ -275,7 +275,7 @@ export default function Page() {
           </nav>
           <a
             className="shrink-0 rounded-full bg-[#171717] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#2b2b2b] sm:px-5 sm:text-sm"
-            href="mailto:hello@aaryx.com"
+            href="mailto:contact@aaryx.de"
           >
             Start project
           </a>
@@ -306,13 +306,13 @@ export default function Page() {
           <div className="mt-9 flex max-w-xl flex-col gap-3 sm:flex-row">
             <a
               className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#d24b2f] px-6 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#b83f28] sm:w-auto"
-              href="mailto:hello@aaryx.com?subject=AARYX project"
+              href="mailto:contact@aaryx.de?subject=AARYX project"
             >
               Start a Project
             </a>
             <a
               className="inline-flex h-12 w-full items-center justify-center rounded-full border border-[#171717]/20 px-6 text-sm font-bold text-[#171717] transition hover:-translate-y-0.5 hover:border-[#171717]/50 sm:w-auto"
-              href="mailto:hello@aaryx.com?subject=Schedule a call with AARYX"
+              href="mailto:contact@aaryx.de?subject=Schedule a call with AARYX"
             >
               Schedule a Call
             </a>
@@ -445,7 +445,7 @@ export default function Page() {
             </p>
             <a
               className="mt-9 inline-flex h-12 items-center justify-center rounded-full bg-[#d24b2f] px-7 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#b83f28]"
-              href="mailto:hello@aaryx.com?subject=AARYX supply chain project"
+              href="mailto:contact@aaryx.de?subject=AARYX supply chain project"
             >
               Start a Project
             </a>
@@ -476,7 +476,7 @@ export default function Page() {
               <a className="block transition hover:text-[#171717]" href="#industries">
                 About
               </a>
-              <a className="block transition hover:text-[#171717]" href="mailto:hello@aaryx.com">
+              <a className="block transition hover:text-[#171717]" href="mailto:contact@aaryx.de">
                 Contact
               </a>
             </div>
