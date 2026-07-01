@@ -4,7 +4,6 @@ type LogoProps = {
   href?: string;
   showClaim?: boolean;
   claim?: string;
-  compactOnMobile?: boolean;
   className?: string;
 };
 
@@ -12,7 +11,6 @@ export function Logo({
   href = "/",
   showClaim = false,
   claim,
-  compactOnMobile = false,
   className = "",
 }: LogoProps) {
   return (
@@ -28,11 +26,7 @@ export function Logo({
           AARYX
         </span>
         {showClaim && claim ? (
-          <span
-            className={`text-[10px] font-black leading-snug text-[#d24b2f] sm:max-w-xs sm:text-[11px] sm:leading-tight lg:max-w-sm ${
-              compactOnMobile ? "hidden min-[480px]:block" : "max-w-[11.5rem] min-[390px]:max-w-[15rem]"
-            }`}
-          >
+          <span className="text-[10px] font-black leading-[1.35] text-[#d24b2f] sm:max-w-xs sm:text-[11px] sm:leading-tight lg:max-w-sm">
             {claim}
           </span>
         ) : null}

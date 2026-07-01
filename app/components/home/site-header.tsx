@@ -17,8 +17,8 @@ export function SiteHeader({ dict, locale, homeHref, contactHref }: SiteHeaderPr
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#171717]/10 bg-[#f7f3ea]/90 pt-[max(0px,env(safe-area-inset-top))] backdrop-blur-xl">
-      <div className="mx-auto flex min-h-14 w-full max-w-7xl items-center justify-between gap-2 px-4 py-2 sm:items-center sm:gap-4 sm:px-5 lg:px-8">
-        <Logo claim={dict.logo.claim} compactOnMobile href={homeHref} showClaim className="min-w-0" />
+      <div className="mx-auto flex w-full max-w-7xl items-start justify-between gap-2 px-4 py-2 sm:items-center sm:gap-4 sm:px-5 lg:px-8">
+        <Logo claim={dict.logo.claim} href={homeHref} showClaim className="min-w-0 flex-1 pr-1 sm:flex-none sm:pr-0" />
         <nav className="hidden min-w-0 items-center gap-8 text-sm font-medium text-[#171717]/70 md:flex">
           {navItems.map((item) => (
             <a
@@ -30,7 +30,7 @@ export function SiteHeader({ dict, locale, homeHref, contactHref }: SiteHeaderPr
             </a>
           ))}
         </nav>
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1.5 pt-0.5 sm:gap-3 sm:pt-0">
           <LangSwitcher
             deLabel={dict.langSwitcher.de}
             enLabel={dict.langSwitcher.en}
