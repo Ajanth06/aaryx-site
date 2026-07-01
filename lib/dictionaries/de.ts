@@ -27,7 +27,7 @@ export const de: Dictionary = {
     label: "Beschaffung & internationales Geschäft",
     title: "Beschaffungs- & Business-Lösungen zwischen Europa und Asien",
     description:
-      "Wir helfen Unternehmen, Produkte zu beschaffen, Lieferanten zu managen und verlässliche Beschaffungsnetzwerke in Europa und Asien aufzubauen.",
+      "Von der Lieferantensuche in Asien bis zum strukturierten RFQ in Europa. AARYX macht internationale Beschaffung beherrschbar.",
     ctaProject: "Projekt starten",
     ctaCall: "Gespräch vereinbaren",
     facts: [
@@ -39,7 +39,6 @@ export const de: Dictionary = {
     mailSubjectCall: "Gespräch mit AARYX vereinbaren",
   },
   dashboard: {
-    illustration: "Illustration – keine Live-Daten",
     commandCenter: "Lieferanten-Kommandozentrale",
     live: "LIVE",
     metrics: [
@@ -64,68 +63,151 @@ export const de: Dictionary = {
       mapAria: "Weltkarte der Marktstandorte",
     },
   },
-  trust: [
-    {
-      title: "Lieferantensuche",
-      copy: "Strukturierte Lieferantenrecherche und Qualifizierung auf internationalen Märkten.",
-      icon: "network",
-    },
-    {
-      title: "Internationaler Handel",
-      copy: "Geschäftsunterstützung zwischen Europa und asiatischen Beschaffungsregionen.",
-      icon: "globe",
-    },
-    {
-      title: "Beschaffungssysteme",
-      copy: "Digitale Workflows für RFQs, Freigaben und Lieferantenmanagement.",
-      icon: "package",
-    },
-    {
-      title: "Operative Exzellenz",
-      copy: "Klare Beschaffungsprozesse für Transparenz und Kontrolle.",
-      icon: "shield",
-    },
-  ],
-  services: {
-    label: "Leistungen",
-    title: "Beschaffungssysteme für komplexe Lieferantenoperationen.",
+  competencies: {
+    label: "Kernkompetenzen",
+    title: "Unsere Kernkompetenzen für internationale Beschaffung, Qualität und Compliance.",
+    items: [
+      { title: "Lieferantenqualifizierung", icon: "clipboard" },
+      { title: "Qualitätsmanagement", icon: "shield" },
+      { title: "System Audits", icon: "approval" },
+      { title: "Beschaffungssysteme", icon: "package" },
+      { title: "Regulatory Affairs", icon: "document" },
+      { title: "Operative Prozesse", icon: "workflow" },
+    ],
+  },
+  cases: {
+    label: "Beispielprojekte",
+    title: "So unterstützen wir Unternehmen in der Praxis.",
+    disclaimer:
+      "Die folgenden Szenarien veranschaulichen typische Projekte und Unterstützungsleistungen von AARYX.",
+    situationLabel: "Ausgangslage",
+    actionLabel: "Mögliche Unterstützung durch AARYX",
+    resultLabel: "Ziel",
     items: [
       {
+        industry: "Medizintechnik",
+        situation:
+          "Ein mittelständischer Hersteller in Deutschland sucht CE-konforme Komponentenlieferanten in Asien, verfügt jedoch über kein eigenes Sourcing-Team vor Ort.",
+        actions: [
+          "Strukturierte Lieferantenrecherche",
+          "Erstellung einer qualifizierten Shortlist",
+          "RFQ-Koordination",
+          "Prüfung der Lieferantendokumentation",
+        ],
+        result:
+          "Aufbau einer fundierten Entscheidungsgrundlage für die Lieferantenauswahl.",
+      },
+      {
+        industry: "Qualitätsmanagement (Beispielszenario)",
+        situation:
+          "Ein Medizintechnik-Unternehmen möchte einen neuen Lieferanten in Asien qualifizieren. Die QM-Dokumentation entspricht noch nicht vollständig den Anforderungen.",
+        actions: [
+          "Dokumentenprüfung",
+          "Gap-Analyse",
+          "Lieferantenbewertung",
+          "Maßnahmenplan",
+        ],
+        result:
+          "Strukturierte Bewertung des Lieferanten und Unterstützung des Qualifizierungsprozesses.",
+      },
+      {
+        industry: "Fertigung (Beispielszenario)",
+        situation:
+          "Ein Fertigungsunternehmen möchte seine RFQ-Prozesse strukturieren und den Überblick über Lieferantenanfragen verbessern.",
+        actions: [
+          "Aufbau eines RFQ-Workflows",
+          "Lieferanten-Onboarding",
+          "Freigabeprozess",
+          "Transparente Prozesssteuerung",
+        ],
+        result: "Mehr Transparenz und effizientere Beschaffungsprozesse.",
+      },
+      {
+        industry: "Industriekomponenten (Beispielszenario)",
+        situation:
+          "Ein Einkaufsteam möchte alternative Lieferanten in Vietnam und Indien identifizieren.",
+        actions: [
+          "Marktanalyse",
+          "Lieferantenrecherche",
+          "Erstqualifizierung",
+          "Technische und kommerzielle Bewertung",
+        ],
+        result:
+          "Vergleich geeigneter Bezugsquellen für strategische Beschaffungsentscheidungen.",
+      },
+    ],
+  },
+  services: {
+    label: "Leistungen",
+    title: "Beschaffung, Qualität und Geschäftsentwicklung",
+    description:
+      "Ganzheitliche Dienstleistungen für internationale Beschaffung, Qualitätsmanagement, Regulatory Affairs und den Aufbau leistungsfähiger Lieferantennetzwerke.",
+    items: [
+      {
+        title: "Internationale Beschaffung",
+        copy: "Lieferantenrecherche, Sourcing und Beschaffungskoordination für Unternehmen mit internationalen Lieferketten zwischen Europa und Asien.",
+        icon: "globe",
+      },
+      {
+        title: "Lieferantenentwicklung",
+        copy: "Identifikation, Qualifizierung und Entwicklung leistungsfähiger Lieferantennetzwerke mit Fokus auf Qualität, Zuverlässigkeit und nachhaltige Partnerschaften.",
+        icon: "network",
+      },
+      {
+        title: "Risiko und Lieferkettenmanagement",
+        copy: "Analyse von Lieferkettenrisiken, Entwicklung robuster Beschaffungsstrategien sowie Unterstützung beim Aufbau widerstandsfähiger und nachhaltiger Liefernetzwerke.",
+        icon: "alert",
+      },
+      {
+        title: "Lieferanten und Systemaudits",
+        copy: "Planung und Durchführung von Audits bei Lieferanten, Prozessen und Compliance einschließlich Auditbericht, Maßnahmenverfolgung und Wirksamkeitsprüfung.",
+        icon: "approval",
+      },
+      {
+        title: "Qualitätsmanagement & Regulatory Affairs",
+        copy: "Unterstützung bei Qualitätsmanagement, Lieferantenqualifizierung sowie regulatorischen Anforderungen nach EU MDR, ISO 13485 und weiteren internationalen Standards.",
+        icon: "shield",
+      },
+      {
+        title: "Compliance & Dokumentation",
+        copy: "Prüfung von Zertifikaten, technischen Dokumentationen, Qualitätsunterlagen und regulatorischen Nachweisen zur Unterstützung sicherer und normgerechter Lieferketten.",
+        icon: "document",
+      },
+      {
+        title: "Technische Beratung",
+        copy: "Technische Bewertung von Produkten, Komponenten und Fertigungspartnern sowie Unterstützung bei der Auswahl geeigneter Lösungen unter Berücksichtigung von Qualität, Funktionalität und regulatorischen Anforderungen.",
+        icon: "factory",
+      },
+      {
         title: "Beschaffungssysteme",
-        copy: "Lieferanten-Onboarding, Sourcing-Pipelines und Beschaffungsinfrastruktur.",
+        copy: "Entwicklung strukturierter Beschaffungsprozesse mit RFQ-Management, Freigabeworkflows, Lieferanten-Onboarding und digitaler Beschaffungsinfrastruktur.",
         icon: "package",
       },
       {
         title: "Operative Dashboards",
-        copy: "Internes Tracking, Freigaben, Lieferstatus und operative Transparenz.",
+        copy: "Digitale Lösungen für Lieferstatus, Freigaben, RFQs und operative Transparenz entlang des gesamten Beschaffungsprozesses.",
         icon: "analytics",
       },
       {
-        title: "Internationaler Handel",
-        copy: "Lieferantensuche und Geschäftsunterstützung zwischen Europa und Asien.",
-        icon: "globe",
+        title: "Business Development",
+        copy: "Aufbau internationaler Geschäftspartnerschaften, Entwicklung neuer Beschaffungsstrategien sowie Unterstützung bei Lieferantenkommunikation und Markteintritt zwischen Europa und Asien.",
+        icon: "briefcase",
       },
     ],
   },
   network: {
     label: "Internationales Netzwerk",
-    title: "Beschaffungskoordination zwischen Europa und Asien.",
+    title: "Qualifizierte Partner in Schlüsselmärkten.",
     description:
-      "AARYX verbindet Lieferantensuche, Handelsunterstützung und operative Systeme zu einer strukturierten Beschaffungsebene.",
+      "AARYX verbindet Qualitätsmanagement, Lieferantenbewertung und operative Systeme zu einer strukturierten Zusammenarbeit zwischen Europa und Asien.",
     mapTitle: "Europa- & Asien-Netzwerk",
-    mapSub: "Lieferantensuche und Beschaffungskoordination",
-    mapAria: "AARYX internationale Beschaffungskarte",
+    mapSub: "Partnerstandorte und operative Koordination",
+    mapAria: "AARYX Netzwerk Europa und Asien",
     nodes: ["Deutschland", "Indien", "Sri Lanka", "Vietnam", "Asien"],
   },
-  kpis: [
-    { value: "Europa & Asien", label: "Netzwerk" },
-    { value: "Lieferanten", label: "Management" },
-    { value: "Beschaffung", label: "Support" },
-    { value: "Business", label: "Lösungen" },
-  ],
   industries: {
     label: "Branchen",
-    title: "Für operativ anspruchsvolle Sektoren gebaut.",
+    title: "Branchen, die auf Qualität, Zuverlässigkeit und internationale Lieferketten angewiesen sind.",
     items: [
       "Medizintechnik",
       "Industriekomponenten",
@@ -135,7 +217,7 @@ export const de: Dictionary = {
     ],
   },
   contact: {
-    title: "Lassen Sie uns Ihre Lieferkette aufbauen",
+    title: "Sprechen Sie mit uns über Ihre nächste Beschaffungsstrategie.",
     description:
       "Kontaktieren Sie AARYX, um Sourcing, Beschaffung und internationale Geschäftsmöglichkeiten zu besprechen.",
     cta: "Projekt starten",
@@ -145,11 +227,11 @@ export const de: Dictionary = {
   contactPage: {
     metaTitle: "Kontakt | AARYX",
     metaDescription:
-      "Projektanfrage an AARYX – Beschaffung und internationale Geschäftslösungen zwischen Europa und Asien.",
+      "Projektanfrage an AARYX: Beschaffung und internationale Geschäftslösungen zwischen Europa und Asien.",
     label: "Kontakt",
     title: "Projekt starten",
     description:
-      "Beschreiben Sie kurz Ihr Vorhaben. Wir melden uns in der Regel innerhalb von 1–2 Werktagen.",
+      "Beschreiben Sie kurz Ihr Vorhaben. Wir melden uns in der Regel innerhalb von 1 bis 2 Werktagen.",
     fields: {
       name: "Name",
       email: "E-Mail",
@@ -174,11 +256,15 @@ export const de: Dictionary = {
   },
   footer: {
     description:
-      "Beschaffung, operative Systeme und internationaler Handel zwischen Europa und Asien.",
+      "Qualitätsmanagement, operative Systeme und Lieferantenpartnerschaften zwischen Europa und Asien.",
     services: "Leistungen",
-    serviceItems: ["Beschaffung", "Operations", "Internationaler Handel"],
+    serviceItems: [
+      "Lieferantenentwicklung",
+      "Qualitätsmanagement",
+      "System Audits",
+      "Regulatory Affairs",
+    ],
     company: "Unternehmen",
-    about: "Über uns",
     contact: "Kontakt",
     legal: "Rechtliches",
     imprint: "Impressum",
@@ -220,7 +306,7 @@ export const de: Dictionary = {
     privacy: {
       metaTitle: "Datenschutz | AARYX",
       metaDescription:
-        "Datenschutzerklärung der AARYX Website – Informationen zur Verarbeitung personenbezogener Daten.",
+        "Datenschutzerklärung der AARYX Website, Informationen zur Verarbeitung personenbezogener Daten.",
       label: "Datenschutz",
       title: "Datenschutzerklärung",
       intro:
@@ -237,12 +323,12 @@ export const de: Dictionary = {
         },
         {
           title: "3. Kontakt per E-Mail und Kontaktformular",
-          body: `Wenn Sie uns per E-Mail unter ${company.email} kontaktieren oder unser Kontaktformular auf www.aaryx.de nutzen, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse, Unternehmen, Inhalt der Nachricht sowie ggf. weitere freiwillige Angaben) zur Bearbeitung und Beantwortung Ihrer Anfrage.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen). Bei Nutzung des Kontaktformulars erfolgt die Verarbeitung zusätzlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit widerrufen können.\n\nWir speichern Ihre Nachricht, bis die Anfrage abschließend bearbeitet ist und darüber hinaus nur solange, wie gesetzliche Aufbewahrungspflichten bestehen oder berechtigte Interessen einer Dokumentation entgegenstehen – in der Regel höchstens drei Jahre.`,
+          body: `Wenn Sie uns per E-Mail unter ${company.email} kontaktieren oder unser Kontaktformular auf www.aaryx.de nutzen, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse, Unternehmen, Inhalt der Nachricht sowie ggf. weitere freiwillige Angaben) zur Bearbeitung und Beantwortung Ihrer Anfrage.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen). Bei Nutzung des Kontaktformulars erfolgt die Verarbeitung zusätzlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit widerrufen können.\n\nWir speichern Ihre Nachricht, bis die Anfrage abschließend bearbeitet ist und darüber hinaus nur solange, wie gesetzliche Aufbewahrungspflichten bestehen oder berechtigte Interessen einer Dokumentation entgegenstehen, in der Regel höchstens drei Jahre.`,
         },
         {
           title: "4. Cookies und Analyse-Tools",
           body:
-            "Diese Website setzt derzeit keine Tracking-Cookies ein und verwendet keine Analyse-Tools wie Google Analytics, Google Tag Manager, Microsoft Clarity oder Meta Pixel. Es findet keine Reichweitenmessung und kein nutzerbezogenes Profiling statt.\n\nFür den technischen Betrieb kann unser Hosting-Anbieter kurzlebige, technisch erforderliche Verarbeitungen vornehmen. Sollten wir künftig einwilligungspflichtige Technologien einsetzen, werden wir diese Datenschutzerklärung vorab ergänzen und – soweit erforderlich – eine Einwilligung einholen.",
+            "Diese Website setzt derzeit keine Tracking-Cookies ein und verwendet keine Analyse-Tools wie Google Analytics, Google Tag Manager, Microsoft Clarity oder Meta Pixel. Es findet keine Reichweitenmessung und kein nutzerbezogenes Profiling statt.\n\nFür den technischen Betrieb kann unser Hosting-Anbieter kurzlebige, technisch erforderliche Verarbeitungen vornehmen. Sollten wir künftig einwilligungspflichtige Technologien einsetzen, werden wir diese Datenschutzerklärung vorab ergänzen und, soweit erforderlich, eine Einwilligung einholen.",
         },
         {
           title: "5. Externe Dienste und eingebettete Inhalte",

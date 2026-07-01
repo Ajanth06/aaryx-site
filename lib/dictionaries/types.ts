@@ -29,7 +29,6 @@ export type Dictionary = {
     mailSubjectCall: string;
   };
   dashboard: {
-    illustration: string;
     commandCenter: string;
     live: string;
     metrics: Array<{ label: string; value: string; note: string }>;
@@ -46,10 +45,29 @@ export type Dictionary = {
       mapAria: string;
     };
   };
-  trust: Array<{ title: string; copy: string; icon: string }>;
+  competencies: {
+    label: string;
+    title: string;
+    items: Array<{ title: string; icon: string }>;
+  };
+  cases: {
+    label: string;
+    title: string;
+    disclaimer: string;
+    situationLabel: string;
+    actionLabel: string;
+    resultLabel: string;
+    items: Array<{
+      industry: string;
+      situation: string;
+      actions: string[];
+      result: string;
+    }>;
+  };
   services: {
     label: string;
     title: string;
+    description: string;
     items: Array<{ title: string; copy: string; icon: string }>;
   };
   network: {
@@ -61,7 +79,6 @@ export type Dictionary = {
     mapAria: string;
     nodes: string[];
   };
-  kpis: Array<{ value: string; label: string }>;
   industries: {
     label: string;
     title: string;
@@ -103,7 +120,6 @@ export type Dictionary = {
     services: string;
     serviceItems: string[];
     company: string;
-    about: string;
     contact: string;
     legal: string;
     imprint: string;

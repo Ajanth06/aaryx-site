@@ -24,9 +24,6 @@ export function SiteFooter({ dict, locale, contactHref }: SiteFooterProps) {
         <div>
           <p className="text-sm font-black">{dict.footer.company}</p>
           <div className="mt-4 space-y-3 text-sm font-semibold text-[#3f3a32]/60">
-            <a className="block transition hover:text-[#171717]" href="#industries">
-              {dict.footer.about}
-            </a>
             <a className="block transition hover:text-[#171717]" href={contactHref}>
               {dict.footer.contact}
             </a>

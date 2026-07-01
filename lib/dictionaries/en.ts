@@ -27,7 +27,7 @@ export const en: Dictionary = {
     label: "Procurement & international business",
     title: "Procurement & Business Solutions Between Europe and Asia",
     description:
-      "We help companies source products, manage suppliers and build reliable procurement networks across Europe and Asia.",
+      "From supplier discovery in Asia to structured RFQs in Europe. AARYX makes international procurement manageable.",
     ctaProject: "Start a Project",
     ctaCall: "Schedule a Call",
     facts: [
@@ -39,7 +39,6 @@ export const en: Dictionary = {
     mailSubjectCall: "Schedule a call with AARYX",
   },
   dashboard: {
-    illustration: "Illustration – not live data",
     commandCenter: "Supplier Command Center",
     live: "LIVE",
     metrics: [
@@ -64,68 +63,151 @@ export const en: Dictionary = {
       mapAria: "World market map",
     },
   },
-  trust: [
-    {
-      title: "Supplier Sourcing",
-      copy: "Structured supplier discovery and qualification across international markets.",
-      icon: "network",
-    },
-    {
-      title: "International Trade",
-      copy: "Business support between Europe and Asian sourcing regions.",
-      icon: "globe",
-    },
-    {
-      title: "Procurement Systems",
-      copy: "Digital workflows for RFQs, approvals and supplier management.",
-      icon: "package",
-    },
-    {
-      title: "Operational Excellence",
-      copy: "Clear procurement processes built for visibility and control.",
-      icon: "shield",
-    },
-  ],
-  services: {
-    label: "Services",
-    title: "Procurement systems for complex supplier operations.",
+  competencies: {
+    label: "Core competencies",
+    title: "Our core competencies for international procurement, quality and compliance.",
+    items: [
+      { title: "Supplier Qualification", icon: "clipboard" },
+      { title: "Quality Management", icon: "shield" },
+      { title: "System Audits", icon: "approval" },
+      { title: "Procurement Systems", icon: "package" },
+      { title: "Regulatory Affairs", icon: "document" },
+      { title: "Operational Processes", icon: "workflow" },
+    ],
+  },
+  cases: {
+    label: "Example projects",
+    title: "How we support companies in practice.",
+    disclaimer:
+      "The following scenarios illustrate typical projects and support services provided by AARYX.",
+    situationLabel: "Starting point",
+    actionLabel: "How AARYX could support",
+    resultLabel: "Goal",
     items: [
       {
+        industry: "Medical technology",
+        situation:
+          "A mid-sized manufacturer in Germany is looking for CE-compliant component suppliers in Asia but has no in-house sourcing team on the ground.",
+        actions: [
+          "Structured supplier research",
+          "Creation of a qualified shortlist",
+          "RFQ coordination",
+          "Review of supplier documentation",
+        ],
+        result:
+          "Building a sound basis for supplier selection decisions.",
+      },
+      {
+        industry: "Quality management (example scenario)",
+        situation:
+          "A medical technology company wants to qualify a new supplier in Asia. QM documentation does not yet fully meet the requirements.",
+        actions: [
+          "Document review",
+          "Gap analysis",
+          "Supplier evaluation",
+          "Action plan",
+        ],
+        result:
+          "Structured supplier assessment and support for the qualification process.",
+      },
+      {
+        industry: "Manufacturing (example scenario)",
+        situation:
+          "A manufacturing company wants to structure its RFQ processes and improve visibility over supplier enquiries.",
+        actions: [
+          "RFQ workflow setup",
+          "Supplier onboarding",
+          "Approval process",
+          "Transparent process management",
+        ],
+        result: "Greater transparency and more efficient procurement processes.",
+      },
+      {
+        industry: "Industrial components (example scenario)",
+        situation:
+          "A purchasing team wants to identify alternative suppliers in Vietnam and India.",
+        actions: [
+          "Market analysis",
+          "Supplier research",
+          "Initial qualification",
+          "Technical and commercial evaluation",
+        ],
+        result:
+          "Comparison of suitable sources for strategic procurement decisions.",
+      },
+    ],
+  },
+  services: {
+    label: "Services",
+    title: "Procurement, quality and business development",
+    description:
+      "Comprehensive services for international procurement, quality management, regulatory affairs and building capable supplier networks.",
+    items: [
+      {
+        title: "International Procurement",
+        copy: "Supplier research, sourcing and procurement coordination for companies with international supply chains between Europe and Asia.",
+        icon: "globe",
+      },
+      {
+        title: "Supplier Development",
+        copy: "Identification, qualification and development of capable supplier networks with a focus on quality, reliability and sustainable partnerships.",
+        icon: "network",
+      },
+      {
+        title: "Risk and Supply Chain Management",
+        copy: "Analysis of supply chain risks, development of robust procurement strategies and support in building resilient and sustainable supplier networks.",
+        icon: "alert",
+      },
+      {
+        title: "Supplier and System Audits",
+        copy: "Planning and execution of supplier, process and compliance audits including audit reports, action tracking and effectiveness reviews.",
+        icon: "approval",
+      },
+      {
+        title: "Quality Management & Regulatory Affairs",
+        copy: "Support with quality management, supplier qualification and regulatory requirements under EU MDR, ISO 13485 and other international standards.",
+        icon: "shield",
+      },
+      {
+        title: "Compliance & Documentation",
+        copy: "Review of certificates, technical documentation, quality records and regulatory evidence to support secure and standards-compliant supply chains.",
+        icon: "document",
+      },
+      {
+        title: "Technical Consulting",
+        copy: "Technical evaluation of products, components and manufacturing partners, plus support in selecting suitable solutions with regard to quality, functionality and regulatory requirements.",
+        icon: "factory",
+      },
+      {
         title: "Procurement Systems",
-        copy: "Supplier onboarding, sourcing pipelines and procurement infrastructure.",
+        copy: "Development of structured procurement processes with RFQ management, approval workflows, supplier onboarding and digital procurement infrastructure.",
         icon: "package",
       },
       {
         title: "Operational Dashboards",
-        copy: "Internal tracking, approvals, delivery status and operational visibility.",
+        copy: "Digital solutions for delivery status, approvals, RFQs and operational transparency across the entire procurement process.",
         icon: "analytics",
       },
       {
-        title: "International Trade",
-        copy: "Supplier sourcing and business support between Europe and Asia.",
-        icon: "globe",
+        title: "Business Development",
+        copy: "Building international business partnerships, developing new procurement strategies and supporting supplier communication and market entry between Europe and Asia.",
+        icon: "briefcase",
       },
     ],
   },
   network: {
     label: "International network",
-    title: "Procurement coordination across Europe and Asia.",
+    title: "Qualified partners in key markets.",
     description:
-      "AARYX connects supplier sourcing, trade support and operational systems into one structured procurement layer.",
+      "AARYX connects quality management, supplier evaluation and operational systems into structured collaboration between Europe and Asia.",
     mapTitle: "Europe & Asia Network",
-    mapSub: "Supplier sourcing and procurement coordination",
-    mapAria: "AARYX international procurement map",
+    mapSub: "Partner locations and operational coordination",
+    mapAria: "AARYX Europe and Asia network",
     nodes: ["Germany", "India", "Sri Lanka", "Vietnam", "Asia"],
   },
-  kpis: [
-    { value: "Europe & Asia", label: "Network" },
-    { value: "Supplier", label: "Management" },
-    { value: "Procurement", label: "Support" },
-    { value: "Business", label: "Solutions" },
-  ],
   industries: {
     label: "Industries",
-    title: "Built for operationally demanding sectors.",
+    title: "Industries that depend on quality, reliability and international supply chains.",
     items: [
       "Medical Technology",
       "Industrial Components",
@@ -135,7 +217,7 @@ export const en: Dictionary = {
     ],
   },
   contact: {
-    title: "Let's Build Your Supply Chain",
+    title: "Talk to us about your next procurement strategy.",
     description:
       "Connect with AARYX to discuss sourcing, procurement and international business opportunities.",
     cta: "Start a Project",
@@ -145,11 +227,11 @@ export const en: Dictionary = {
   contactPage: {
     metaTitle: "Contact | AARYX",
     metaDescription:
-      "Send a project enquiry to AARYX – procurement and international business solutions between Europe and Asia.",
+      "Send a project enquiry to AARYX: procurement and international business solutions between Europe and Asia.",
     label: "Contact",
     title: "Start a project",
     description:
-      "Tell us briefly about your project. We usually reply within 1–2 business days.",
+      "Tell us briefly about your project. We usually reply within 1 to 2 business days.",
     fields: {
       name: "Name",
       email: "Email",
@@ -172,11 +254,15 @@ export const en: Dictionary = {
   },
   footer: {
     description:
-      "Procurement, operations and international trade systems between Europe and Asia.",
+      "Quality management, operational systems and supplier partnerships between Europe and Asia.",
     services: "Services",
-    serviceItems: ["Procurement", "Operations", "International Trade"],
+    serviceItems: [
+      "Supplier development",
+      "Quality management",
+      "System audits",
+      "Regulatory affairs",
+    ],
     company: "Company",
-    about: "About",
     contact: "Contact",
     legal: "Legal",
     imprint: "Imprint",
@@ -218,7 +304,7 @@ export const en: Dictionary = {
     privacy: {
       metaTitle: "Privacy Policy | AARYX",
       metaDescription:
-        "Privacy policy for the AARYX website – how we process personal data.",
+        "Privacy policy for the AARYX website, how we process personal data.",
       label: "Privacy",
       title: "Privacy Policy",
       intro:
@@ -235,7 +321,7 @@ export const en: Dictionary = {
         },
         {
           title: "3. Contact by email and contact form",
-          body: `If you contact us by email at ${company.email} or use our contact form at www.aaryx.de, we process the data you provide (e.g. name, email address, company, message content and any other voluntary details) to handle and respond to your enquiry.\n\nLegal basis: Art. 6 (1) lit. b GDPR where your enquiry relates to the performance of a contract or pre-contractual measures, otherwise Art. 6 (1) lit. f GDPR (legitimate interest in handling enquiries). When using the contact form, processing is additionally based on your consent (Art. 6 (1) lit. a GDPR), which you may withdraw at any time.\n\nWe retain your message until your enquiry has been fully processed and thereafter only for as long as statutory retention obligations apply or legitimate interests in documentation require – as a rule no longer than three years.`,
+          body: `If you contact us by email at ${company.email} or use our contact form at www.aaryx.de, we process the data you provide (e.g. name, email address, company, message content and any other voluntary details) to handle and respond to your enquiry.\n\nLegal basis: Art. 6 (1) lit. b GDPR where your enquiry relates to the performance of a contract or pre-contractual measures, otherwise Art. 6 (1) lit. f GDPR (legitimate interest in handling enquiries). When using the contact form, processing is additionally based on your consent (Art. 6 (1) lit. a GDPR), which you may withdraw at any time.\n\nWe retain your message until your enquiry has been fully processed and thereafter only for as long as statutory retention obligations apply or legitimate interests in documentation require, as a rule no longer than three years.`,
         },
         {
           title: "4. Cookies and analytics tools",

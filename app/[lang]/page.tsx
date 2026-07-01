@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
+import { CasesSection } from "@/app/components/home/cases-section";
 import { ContactSection } from "@/app/components/home/contact-section";
 import { HeroSection } from "@/app/components/home/hero-section";
 import { IndustriesSection } from "@/app/components/home/industries-section";
-import { KpisSection } from "@/app/components/home/kpis-section";
 import { NetworkSection } from "@/app/components/home/network-section";
 import { ServicesSection } from "@/app/components/home/services-section";
 import { SiteFooter } from "@/app/components/home/site-footer";
@@ -42,8 +42,8 @@ export default async function Page({ params }: PageProps) {
       <HeroSection dict={dict} {...links} />
       <TrustSection dict={dict} />
       <ServicesSection dict={dict} />
+      <CasesSection dict={dict} />
       <NetworkSection dict={dict} />
-      <KpisSection dict={dict} />
       <IndustriesSection dict={dict} />
       <ContactSection dict={dict} {...links} />
       <SiteFooter dict={dict} locale={links.locale} contactHref={links.contactHref} />
