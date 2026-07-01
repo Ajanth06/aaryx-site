@@ -9,8 +9,19 @@ import {
 
 const legacyPaths = ["/imprint", "/privacy"];
 
+const metadataRoutes = new Set([
+  "/icon",
+  "/apple-icon",
+  "/opengraph-image",
+]);
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (metadataRoutes.has(pathname)) {
+    return NextResponse.next();
+  }
+
   const locale = getLocaleFromAcceptLanguage(
     request.headers.get("accept-language"),
   );

@@ -8,14 +8,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.ico?v=aaryx", sizes: "any" },
+      { url: "/favicon-32x32.png?v=aaryx", type: "image/png", sizes: "32x32" },
     ],
     apple: [
-      { url: "/apple-icon", type: "image/png" },
-      { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
+      { url: "/apple-touch-icon.png?v=aaryx", type: "image/png", sizes: "180x180" },
     ],
-    shortcut: ["/favicon.ico"],
+    shortcut: ["/favicon.ico?v=aaryx"],
   },
 };
 
