@@ -4,18 +4,35 @@ import { defaultLocale, isLocale } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
+const brandIconVersion = "3";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.svg?v=2", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=2", sizes: "any" },
-      { url: "/favicon-32x32.png?v=2", type: "image/png", sizes: "32x32" },
+      {
+        url: `/brand/icon.svg?v=${brandIconVersion}`,
+        type: "image/svg+xml",
+      },
+      {
+        url: `/brand/icon.ico?v=${brandIconVersion}`,
+        sizes: "any",
+      },
+      {
+        url: `/brand/icon-32.png?v=${brandIconVersion}`,
+        type: "image/png",
+        sizes: "32x32",
+      },
     ],
     apple: [
-      { url: "/apple-touch-icon.png?v=2", type: "image/png", sizes: "180x180" },
+      {
+        url: `/brand/icon-180.png?v=${brandIconVersion}`,
+        type: "image/png",
+        sizes: "180x180",
+      },
     ],
-    shortcut: ["/favicon.ico?v=2"],
+    shortcut: [`/brand/icon.ico?v=${brandIconVersion}`],
   },
 };
 
@@ -31,8 +48,20 @@ export default async function RootLayout({
   return (
     <html lang={lang} className="antialiased">
       <head>
-        <link href="/favicon.svg?v=2" rel="icon" type="image/svg+xml" />
-        <link href="/favicon.ico?v=2" rel="icon" sizes="any" />
+        <link
+          href={`/brand/icon.svg?v=${brandIconVersion}`}
+          rel="icon"
+          type="image/svg+xml"
+        />
+        <link
+          href={`/brand/icon.ico?v=${brandIconVersion}`}
+          rel="icon"
+          sizes="any"
+        />
+        <link
+          href={`/brand/icon-180.png?v=${brandIconVersion}`}
+          rel="apple-touch-icon"
+        />
       </head>
       <body>{children}</body>
     </html>
