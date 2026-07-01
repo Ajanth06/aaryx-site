@@ -1,25 +1,24 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { defaultLocale, isLocale } from "@/lib/i18n";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AARYX | Procurement & Operational Systems",
-  description:
-    "Modern procurement, workflow and digital infrastructure systems for companies across Europe and Asia.",
+  metadataBase: new URL(siteUrl),
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#f7f3ea",
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const langHeader = headersList.get("x-lang");
+  const lang = langHeader && isLocale(langHeader) ? langHeader : defaultLocale;
+
   return (
-    <html lang="en" className="antialiased">
+    <html lang={lang} className="antialiased">
       <body>{children}</body>
     </html>
   );

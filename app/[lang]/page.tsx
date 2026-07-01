@@ -1,5 +1,10 @@
-import { LiveMarketClocks } from "./components/live-market-clocks";
-import { Logo } from "./components/logo";
+import { notFound } from "next/navigation";
+import { LangSwitcher } from "../components/lang-switcher";
+import { LiveMarketClocks } from "../components/live-market-clocks";
+import { Logo } from "../components/logo";
+import { getDictionary, isLocale, localizedPath } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/dictionaries/types";
+import { contactEmail } from "@/lib/site";
 
 type IconName =
   | "analytics"
@@ -24,6 +29,14 @@ const iconPaths: Record<IconName, string> = {
   truck:
     "M3 7H14V16H3V7ZM14 10H18L21 13V16H14V10ZM7 19A2 2 0 1 0 7 15A2 2 0 0 0 7 19ZM18 19A2 2 0 1 0 18 15A2 2 0 0 0 18 19Z",
 };
+
+const mapNodeCoords = [
+  [82, 54],
+  [154, 87],
+  [162, 106],
+  [184, 83],
+  [202, 58],
+] as const;
 
 function Icon({ name }: { name: IconName }) {
   return (
@@ -50,47 +63,40 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function ProcurementDashboard() {
-  const metrics = [
-    ["Supplier Score", "92", "Approved network"],
-    ["Open RFQs", "18", "4 urgent reviews"],
-    ["Delivery Status", "96%", "On schedule"],
-  ];
-
-  const workflow = [
-    ["Procurement Requests", "34 open", 82],
-    ["Approval Workflow", "Legal review", 58],
-    ["Delivery Tracking", "12 shipments", 74],
-  ];
+function ProcurementDashboard({ dict }: { dict: Dictionary }) {
+  const d = dict.dashboard;
 
   return (
     <div className="relative mx-auto w-full max-w-2xl">
+      <p className="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.12em] text-[#3f3a32]/45">
+        {d.illustration}
+      </p>
       <div className="overflow-hidden rounded-[2rem] bg-[#171717] p-4 shadow-2xl shadow-[#171717]/20 sm:p-6">
         <div className="rounded-[1.4rem] bg-[#fefaf1] p-4 sm:p-5">
           <div className="flex items-start justify-between gap-4 border-b border-[#171717]/10 pb-4">
             <div className="min-w-0">
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#171717]/50 sm:text-xs">
-                Supplier Command Center
+                {d.commandCenter}
               </p>
               <p className="mt-1 text-xl font-black">AARYX OS</p>
             </div>
             <span className="inline-flex items-center gap-2 rounded-full bg-[#171717] px-3 py-2 text-xs font-black text-white">
               <span className="size-2 rounded-full bg-[#d24b2f] motion-safe:animate-pulse" />
-              LIVE
+              {d.live}
             </span>
           </div>
 
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            {metrics.map(([label, value, note]) => (
+            {d.metrics.map((metric) => (
               <div
                 className="rounded-2xl border border-[#171717]/10 bg-white p-3 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#171717]/10"
-                key={label}
+                key={metric.label}
               >
                 <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#171717]/45">
-                  {label}
+                  {metric.label}
                 </p>
-                <p className="mt-3 text-3xl font-black leading-none">{value}</p>
-                <p className="mt-2 text-xs font-bold text-[#3f3a32]/55">{note}</p>
+                <p className="mt-3 text-3xl font-black leading-none">{metric.value}</p>
+                <p className="mt-2 text-xs font-bold text-[#3f3a32]/55">{metric.note}</p>
               </div>
             ))}
           </div>
@@ -99,24 +105,24 @@ function ProcurementDashboard() {
             <div className="rounded-2xl border border-[#171717]/10 bg-white p-4">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-sm font-black">Approval Pipeline</p>
+                  <p className="text-sm font-black">{d.approvalPipeline}</p>
                   <p className="mt-1 text-xs font-semibold text-[#3f3a32]/50">
-                    RFQ to purchase order visibility
+                    {d.approvalSub}
                   </p>
                 </div>
                 <Icon name="approval" />
               </div>
               <div className="mt-4 space-y-4">
-                {workflow.map(([stage, status, value]) => (
-                  <div key={stage}>
+                {d.workflow.map((item) => (
+                  <div key={item.stage}>
                     <div className="flex justify-between gap-3 text-xs font-bold">
-                      <span>{stage}</span>
-                      <span className="text-[#3f3a32]/50">{status}</span>
+                      <span>{item.stage}</span>
+                      <span className="text-[#3f3a32]/50">{item.status}</span>
                     </div>
                     <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e2d7c3]">
                       <span
                         className="block h-full rounded-full bg-[#d24b2f]"
-                        style={{ width: `${value}%` }}
+                        style={{ width: `${item.value}%` }}
                       />
                     </div>
                   </div>
@@ -127,9 +133,9 @@ function ProcurementDashboard() {
             <div className="rounded-2xl bg-[#e2d7c3] p-4">
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-sm font-black">Procurement Analytics</p>
+                  <p className="text-sm font-black">{d.analytics}</p>
                   <p className="mt-1 text-xs font-semibold text-[#3f3a32]/55">
-                    Supplier response rate
+                    {d.analyticsSub}
                   </p>
                 </div>
                 <span className="rounded-full bg-[#171717] px-3 py-1 text-xs font-black text-white">
@@ -153,12 +159,12 @@ function ProcurementDashboard() {
 
           <div className="mt-3 rounded-2xl border border-[#171717]/10 bg-white p-3">
             <div className="mb-3 flex items-center justify-between">
-              <p className="text-sm font-black">Operational Status</p>
+              <p className="text-sm font-black">{d.operationalStatus}</p>
               <span className="rounded-full bg-[#2d8b57]/12 px-3 py-1 text-xs font-bold text-[#2d8b57]">
-                Running
+                {d.running}
               </span>
             </div>
-            <LiveMarketClocks />
+            <LiveMarketClocks labels={d.clocks} />
           </div>
         </div>
       </div>
@@ -166,27 +172,19 @@ function ProcurementDashboard() {
   );
 }
 
-function WorldMap() {
-  const nodes = [
-    ["Germany", 82, 54],
-    ["India", 154, 87],
-    ["Sri Lanka", 162, 106],
-    ["Vietnam", 184, 83],
-    ["Asia", 202, 58],
-  ] as const;
+function WorldMap({ dict }: { dict: Dictionary }) {
+  const n = dict.network;
 
   return (
     <div className="overflow-hidden rounded-[1.5rem] border border-[#171717]/10 bg-[#171717] p-4 text-white shadow-xl shadow-[#171717]/10">
       <div className="mb-4 flex items-center justify-between gap-4">
         <div>
-          <p className="text-sm font-black">Europe & Asia Network</p>
-          <p className="mt-1 text-xs font-semibold text-white/45">
-            Supplier sourcing and procurement coordination
-          </p>
+          <p className="text-sm font-black">{n.mapTitle}</p>
+          <p className="mt-1 text-xs font-semibold text-white/45">{n.mapSub}</p>
         </div>
         <Icon name="globe" />
       </div>
-      <svg aria-label="AARYX international procurement map" role="img" viewBox="0 0 240 128">
+      <svg aria-label={n.mapAria} role="img" viewBox="0 0 240 128">
         <defs>
           <filter id="mapGlow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="2.5" result="blur" />
@@ -212,82 +210,83 @@ function WorldMap() {
           <path className="motion-safe:animate-pulse" d="M154 87C166 85 176 83 184 83" strokeDasharray="4 5" />
           <path className="motion-safe:animate-pulse" d="M162 106C171 98 178 90 184 83" strokeDasharray="4 5" />
         </g>
-        {nodes.map(([label, x, y]) => (
-          <g filter="url(#mapGlow)" key={label}>
-            <circle cx={x} cy={y} fill="#d24b2f" r="4" />
-            <circle cx={x} cy={y} fill="none" r="8" stroke="#d24b2f" strokeOpacity="0.32" />
-            <text fill="#fefaf1" fontSize="6" fontWeight="700" x={x + 8} y={y - 5}>
-              {label}
-            </text>
-          </g>
-        ))}
+        {n.nodes.map((label, index) => {
+          const [x, y] = mapNodeCoords[index] ?? [0, 0];
+          return (
+            <g filter="url(#mapGlow)" key={label}>
+              <circle cx={x} cy={y} fill="#d24b2f" r="4" />
+              <circle cx={x} cy={y} fill="none" r="8" stroke="#d24b2f" strokeOpacity="0.32" />
+              <text fill="#fefaf1" fontSize="6" fontWeight="700" x={x + 8} y={y - 5}>
+                {label}
+              </text>
+            </g>
+          );
+        })}
       </svg>
     </div>
   );
 }
 
-export default function Page() {
-  const navItems = ["Services", "Network", "Industries", "Contact"];
+type PageProps = {
+  params: Promise<{ lang: string }>;
+};
 
-  const trust = [
-    ["Supplier Sourcing", "Structured supplier discovery and qualification across international markets.", "network"],
-    ["International Trade", "Business support between Europe and Asian sourcing regions.", "globe"],
-    ["Procurement Systems", "Digital workflows for RFQs, approvals and supplier management.", "package"],
-    ["Operational Excellence", "Clear procurement processes built for visibility and control.", "shield"],
-  ] as const;
+export default async function Page({ params }: PageProps) {
+  const { lang } = await params;
 
-  const services = [
-    ["Procurement Systems", "Supplier onboarding, sourcing pipelines and procurement infrastructure.", "package"],
-    ["Operational Dashboards", "Internal tracking, approvals, delivery status and operational visibility.", "analytics"],
-    ["International Trade", "Supplier sourcing and business support between Europe and Asia.", "globe"],
-  ] as const;
+  if (!isLocale(lang)) {
+    notFound();
+  }
 
-  const kpis = [
-    ["Europe & Asia", "Network"],
-    ["Supplier", "Management"],
-    ["Procurement", "Support"],
-    ["Business", "Solutions"],
-  ];
+  const dict = getDictionary(lang);
+  const homeHref = localizedPath(lang);
 
-  const industries = [
-    "Medical Technology",
-    "Industrial Components",
-    "Manufacturing",
-    "Logistics",
-    "Food & Agriculture",
+  const navItems = [
+    { href: "#services", label: dict.nav.services },
+    { href: "#network", label: dict.nav.network },
+    { href: "#industries", label: dict.nav.industries },
+    { href: "#contact", label: dict.nav.contact },
   ];
 
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-[#f7f3ea] text-[#171717]">
       <header className="sticky top-0 z-50 border-b border-[#171717]/10 bg-[#f7f3ea]/90 backdrop-blur-xl">
-        <div className="mx-auto flex min-h-14 w-full max-w-7xl items-center justify-between gap-4 px-5 py-2 sm:px-8">
-          <Logo href="/" showClaim />
+        <div className="mx-auto flex min-h-14 w-full max-w-7xl items-center justify-between gap-3 px-5 py-2 sm:gap-4 sm:px-8">
+          <Logo claim={dict.logo.claim} href={homeHref} showClaim />
           <nav className="hidden min-w-0 items-center gap-8 text-sm font-medium text-[#171717]/70 md:flex">
             {navItems.map((item) => (
               <a
                 className="whitespace-nowrap transition hover:text-[#171717]"
-                href={`#${item.toLowerCase()}`}
-                key={item}
+                href={item.href}
+                key={item.href}
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </nav>
-          <a
-            className="shrink-0 rounded-full bg-[#171717] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#2b2b2b] sm:px-5 sm:text-sm"
-            href="mailto:contact@aaryx.de"
-          >
-            Start project
-          </a>
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <LangSwitcher
+              deLabel={dict.langSwitcher.de}
+              enLabel={dict.langSwitcher.en}
+              label={dict.langSwitcher.label}
+              locale={lang}
+            />
+            <a
+              className="rounded-full bg-[#171717] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#2b2b2b] sm:px-5 sm:text-sm"
+              href={`mailto:${contactEmail}`}
+            >
+              {dict.nav.startProject}
+            </a>
+          </div>
         </div>
         <nav className="mx-auto flex w-full max-w-7xl items-center gap-5 overflow-x-auto px-5 pb-2 text-xs font-medium text-[#171717]/60 [scrollbar-width:none] sm:px-8 md:hidden [&::-webkit-scrollbar]:hidden">
           {navItems.map((item) => (
             <a
               className="shrink-0 transition hover:text-[#171717]"
-              href={`#${item.toLowerCase()}`}
-              key={item}
+              href={item.href}
+              key={item.href}
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>
@@ -295,38 +294,33 @@ export default function Page() {
 
       <section className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-start gap-12 px-5 pb-20 pt-5 sm:px-8 sm:pt-8 lg:grid-cols-[0.95fr_1.05fr] lg:pb-24 lg:pt-10">
         <div className="motion-safe:animate-[fade-up_700ms_ease-out_both]">
-          <SectionLabel>Procurement & international business</SectionLabel>
+          <SectionLabel>{dict.hero.label}</SectionLabel>
           <h1 className="hero-title-blink mt-6 max-w-4xl text-[3.15rem] font-black leading-[0.96] text-[#171717] min-[390px]:text-6xl sm:text-7xl lg:text-8xl">
-            Procurement & Business Solutions Between Europe and Asia
+            {dict.hero.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#3f3a32] sm:text-2xl sm:leading-9">
-            We help companies source products, manage suppliers and build
-            reliable procurement networks across Europe and Asia.
+            {dict.hero.description}
           </p>
           <div className="mt-9 flex max-w-xl flex-col gap-3 sm:flex-row">
             <a
               className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#d24b2f] px-6 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#b83f28] sm:w-auto"
-              href="mailto:contact@aaryx.de?subject=AARYX project"
+              href={`mailto:${contactEmail}?subject=${encodeURIComponent(dict.hero.mailSubjectProject)}`}
             >
-              Start a Project
+              {dict.hero.ctaProject}
             </a>
             <a
               className="inline-flex h-12 w-full items-center justify-center rounded-full border border-[#171717]/20 px-6 text-sm font-bold text-[#171717] transition hover:-translate-y-0.5 hover:border-[#171717]/50 sm:w-auto"
-              href="mailto:contact@aaryx.de?subject=Schedule a call with AARYX"
+              href={`mailto:${contactEmail}?subject=${encodeURIComponent(dict.hero.mailSubjectCall)}`}
             >
-              Schedule a Call
+              {dict.hero.ctaCall}
             </a>
           </div>
           <div className="mt-10 grid max-w-xl grid-cols-3 gap-3 border-y border-[#171717]/10 py-5">
-            {[
-              ["Germany", "Base"],
-              ["Europe / Asia", "Markets"],
-              ["B2B", "Focus"],
-            ].map(([value, label]) => (
-              <div key={label}>
-                <p className="text-base font-black sm:text-lg">{value}</p>
+            {dict.hero.facts.map((fact) => (
+              <div key={fact.label}>
+                <p className="text-base font-black sm:text-lg">{fact.value}</p>
                 <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.1em] text-[#3f3a32]/45">
-                  {label}
+                  {fact.label}
                 </p>
               </div>
             ))}
@@ -334,22 +328,22 @@ export default function Page() {
         </div>
 
         <div className="motion-safe:animate-[fade-up_900ms_ease-out_120ms_both]">
-          <ProcurementDashboard />
+          <ProcurementDashboard dict={dict} />
         </div>
       </section>
 
       <section className="border-y border-[#171717]/10 bg-white px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-4">
-          {trust.map(([title, copy, icon]) => (
+          {dict.trust.map((item) => (
             <article
               className="rounded-2xl border border-[#171717]/10 bg-[#f7f3ea] p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#171717]/10"
-              key={title}
+              key={item.title}
             >
               <div className="grid size-11 place-items-center rounded-full bg-[#171717] text-white">
-                <Icon name={icon} />
+                <Icon name={item.icon as IconName} />
               </div>
-              <h2 className="mt-6 text-xl font-black">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-[#3f3a32]/65">{copy}</p>
+              <h2 className="mt-6 text-xl font-black">{item.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-[#3f3a32]/65">{item.copy}</p>
             </article>
           ))}
         </div>
@@ -358,22 +352,20 @@ export default function Page() {
       <section className="px-5 py-24 sm:px-8 lg:py-36" id="services">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
-            <SectionLabel>Services</SectionLabel>
-            <h2 className="mt-5 text-4xl font-black sm:text-6xl">
-              Procurement systems for complex supplier operations.
-            </h2>
+            <SectionLabel>{dict.services.label}</SectionLabel>
+            <h2 className="mt-5 text-4xl font-black sm:text-6xl">{dict.services.title}</h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {services.map(([title, copy, icon]) => (
+            {dict.services.items.map((item) => (
               <article
                 className="rounded-[1.35rem] border border-[#171717]/10 bg-white p-7 shadow-lg shadow-[#171717]/5 transition hover:-translate-y-1 hover:border-[#d24b2f]/40 hover:shadow-2xl hover:shadow-[#171717]/10"
-                key={title}
+                key={item.title}
               >
                 <div className="grid size-12 place-items-center rounded-full bg-[#f7f3ea] text-[#d24b2f]">
-                  <Icon name={icon} />
+                  <Icon name={item.icon as IconName} />
                 </div>
-                <h3 className="mt-8 text-2xl font-black">{title}</h3>
-                <p className="mt-4 leading-7 text-[#3f3a32]/70">{copy}</p>
+                <h3 className="mt-8 text-2xl font-black">{item.title}</h3>
+                <p className="mt-4 leading-7 text-[#3f3a32]/70">{item.copy}</p>
               </article>
             ))}
           </div>
@@ -383,26 +375,23 @@ export default function Page() {
       <section className="bg-[#171717] px-5 py-24 text-white sm:px-8 lg:py-36" id="network">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <SectionLabel>International network</SectionLabel>
-            <h2 className="mt-5 text-4xl font-black sm:text-6xl">
-              Procurement coordination across Europe and Asia.
-            </h2>
+            <SectionLabel>{dict.network.label}</SectionLabel>
+            <h2 className="mt-5 text-4xl font-black sm:text-6xl">{dict.network.title}</h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/60">
-              AARYX connects supplier sourcing, trade support and operational
-              systems into one structured procurement layer.
+              {dict.network.description}
             </p>
           </div>
-          <WorldMap />
+          <WorldMap dict={dict} />
         </div>
       </section>
 
       <section className="border-b border-[#171717]/10 bg-white px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {kpis.map(([value, label]) => (
-            <div className="rounded-2xl bg-[#f7f3ea] p-7" key={label}>
-              <p className="text-3xl font-black sm:text-4xl">{value}</p>
+          {dict.kpis.map((kpi) => (
+            <div className="rounded-2xl bg-[#f7f3ea] p-7" key={kpi.label}>
+              <p className="text-3xl font-black sm:text-4xl">{kpi.value}</p>
               <p className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-[#3f3a32]/45">
-                {label}
+                {kpi.label}
               </p>
             </div>
           ))}
@@ -412,13 +401,11 @@ export default function Page() {
       <section className="bg-white px-5 py-24 sm:px-8 lg:py-36" id="industries">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
-            <SectionLabel>Industries</SectionLabel>
-            <h2 className="mt-5 text-4xl font-black sm:text-6xl">
-              Built for operationally demanding sectors.
-            </h2>
+            <SectionLabel>{dict.industries.label}</SectionLabel>
+            <h2 className="mt-5 text-4xl font-black sm:text-6xl">{dict.industries.title}</h2>
           </div>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {industries.map((industry, index) => (
+            {dict.industries.items.map((industry, index) => (
               <div
                 className="rounded-2xl border border-[#171717]/10 bg-[#f7f3ea] p-5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#171717]/10"
                 key={industry}
@@ -436,18 +423,13 @@ export default function Page() {
       <section className="px-5 py-24 sm:px-8 lg:py-36" id="contact">
         <div className="mx-auto max-w-7xl rounded-[1.5rem] bg-[#171717] px-6 py-16 text-white sm:px-10 lg:px-16">
           <div className="max-w-3xl">
-            <h2 className="text-4xl font-black sm:text-6xl">
-              Let&apos;s Build Your Supply Chain
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-white/60">
-              Connect with AARYX to discuss sourcing, procurement and
-              international business opportunities.
-            </p>
+            <h2 className="text-4xl font-black sm:text-6xl">{dict.contact.title}</h2>
+            <p className="mt-6 text-lg leading-8 text-white/60">{dict.contact.description}</p>
             <a
               className="mt-9 inline-flex h-12 items-center justify-center rounded-full bg-[#d24b2f] px-7 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#b83f28]"
-              href="mailto:contact@aaryx.de?subject=AARYX supply chain project"
+              href={`mailto:${contactEmail}?subject=${encodeURIComponent(dict.contact.mailSubject)}`}
             >
-              Start a Project
+              {dict.contact.cta}
             </a>
           </div>
         </div>
@@ -458,37 +440,42 @@ export default function Page() {
           <div>
             <p className="text-2xl font-black tracking-[0.18em]">AARYX</p>
             <p className="mt-4 max-w-sm text-sm leading-6 text-[#3f3a32]/60">
-              Procurement, operations and international trade systems between
-              Europe and Asia.
+              {dict.footer.description}
             </p>
           </div>
           <div>
-            <p className="text-sm font-black">Services</p>
+            <p className="text-sm font-black">{dict.footer.services}</p>
             <div className="mt-4 space-y-3 text-sm font-semibold text-[#3f3a32]/60">
-              <p>Procurement</p>
-              <p>Operations</p>
-              <p>International Trade</p>
+              {dict.footer.serviceItems.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
             </div>
           </div>
           <div>
-            <p className="text-sm font-black">Company</p>
+            <p className="text-sm font-black">{dict.footer.company}</p>
             <div className="mt-4 space-y-3 text-sm font-semibold text-[#3f3a32]/60">
               <a className="block transition hover:text-[#171717]" href="#industries">
-                About
+                {dict.footer.about}
               </a>
-              <a className="block transition hover:text-[#171717]" href="mailto:contact@aaryx.de">
-                Contact
+              <a className="block transition hover:text-[#171717]" href={`mailto:${contactEmail}`}>
+                {dict.footer.contact}
               </a>
             </div>
           </div>
           <div>
-            <p className="text-sm font-black">Legal</p>
+            <p className="text-sm font-black">{dict.footer.legal}</p>
             <div className="mt-4 space-y-3 text-sm font-semibold text-[#3f3a32]/60">
-              <a className="block transition hover:text-[#171717]" href="/imprint">
-                Impressum
+              <a
+                className="block transition hover:text-[#171717]"
+                href={localizedPath(lang, "/imprint")}
+              >
+                {dict.footer.imprint}
               </a>
-              <a className="block transition hover:text-[#171717]" href="/privacy">
-                Datenschutz
+              <a
+                className="block transition hover:text-[#171717]"
+                href={localizedPath(lang, "/privacy")}
+              >
+                {dict.footer.privacy}
               </a>
             </div>
           </div>

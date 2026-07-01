@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from "react";
 
+type ClockLabels = {
+  title: string;
+  live: string;
+  mapAria: string;
+};
+
 const clocks = [
   { city: "Berlin", label: "DE", timeZone: "Europe/Berlin", mapX: 116, mapY: 39 },
   { city: "Shanghai", label: "CN", timeZone: "Asia/Shanghai", mapX: 190, mapY: 58 },
@@ -40,11 +46,11 @@ function getClockParts(date: Date, timeZone: string) {
   };
 }
 
-function MarketMap() {
+function MarketMap({ mapAria }: { mapAria: string }) {
   return (
     <div className="rounded-xl bg-[#171717] p-2 shadow-inner">
       <svg
-        aria-label="World market map"
+        aria-label={mapAria}
         className="h-32 w-full"
         role="img"
         viewBox="0 0 240 132"
@@ -134,7 +140,7 @@ function MarketMap() {
   );
 }
 
-export function LiveMarketClocks() {
+export function LiveMarketClocks({ labels }: { labels: ClockLabels }) {
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -152,13 +158,13 @@ export function LiveMarketClocks() {
   return (
     <div className="rounded-2xl border border-[#171717]/10 bg-white p-3">
       <div className="mb-2 flex items-center justify-between">
-        <p className="text-sm font-bold">Market clocks</p>
+        <p className="text-sm font-bold">{labels.title}</p>
         <span className="rounded-full bg-[#171717] px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-white">
-          Live
+          {labels.live}
         </span>
       </div>
       <div className="min-w-0 space-y-2">
-        <MarketMap />
+        <MarketMap mapAria={labels.mapAria} />
 
         <div className="grid min-w-0 grid-cols-2 gap-1.5">
           {clocks.map((clock) => {
