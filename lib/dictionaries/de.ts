@@ -139,7 +139,38 @@ export const de: Dictionary = {
     description:
       "Kontaktieren Sie AARYX, um Sourcing, Beschaffung und internationale Geschäftsmöglichkeiten zu besprechen.",
     cta: "Projekt starten",
+    ctaCall: "Gespräch vereinbaren",
     mailSubject: "AARYX Lieferketten-Projekt",
+  },
+  contactPage: {
+    metaTitle: "Kontakt | AARYX",
+    metaDescription:
+      "Projektanfrage an AARYX – Beschaffung und internationale Geschäftslösungen zwischen Europa und Asien.",
+    label: "Kontakt",
+    title: "Projekt starten",
+    description:
+      "Beschreiben Sie kurz Ihr Vorhaben. Wir melden uns in der Regel innerhalb von 1–2 Werktagen.",
+    fields: {
+      name: "Name",
+      email: "E-Mail",
+      company: "Unternehmen (optional)",
+      message: "Nachricht",
+      privacyBefore: "Ich habe die ",
+      privacyLink: "Datenschutzerklärung",
+      privacyAfter:
+        " gelesen und willige in die Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage ein.",
+    },
+    submit: "Anfrage senden",
+    sending: "Wird gesendet …",
+    successTitle: "Vielen Dank",
+    successBody:
+      "Ihre Anfrage ist bei uns eingegangen. Wir melden uns in Kürze bei Ihnen.",
+    errorTitle: "Senden fehlgeschlagen",
+    errorBody:
+      "Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an contact@aaryx.de.",
+    errorNotConfigured:
+      "Das Kontaktformular ist vorübergehend nicht verfügbar. Bitte schreiben Sie uns direkt per E-Mail.",
+    mailFallback: "Per E-Mail kontaktieren",
   },
   footer: {
     description:
@@ -205,8 +236,8 @@ export const de: Dictionary = {
           body: `Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch Informationen in sogenannten Server-Logfiles gespeichert. Hierzu gehören insbesondere:\n• IP-Adresse\n• Datum und Uhrzeit der Anfrage\n• Browsertyp und Browserversion\n• Betriebssystem\n• Referrer-URL\n• aufgerufene Seiten und Dateien\n\nDie Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht in der sicheren Bereitstellung und dem störungsfreien Betrieb unserer Website.\n\nHosting-Anbieter: ${hosting.provider}, ${hosting.address}.\nWeitere Informationen finden Sie unter: ${hosting.privacyPolicy}\n\nDie Speicherdauer der Server-Logfiles richtet sich nach den Vorgaben des Hosting-Anbieters und erfolgt nur so lange, wie dies für den sicheren Betrieb der Website erforderlich ist. Da der Hosting-Anbieter seinen Sitz in den USA hat, kann eine Datenübermittlung in ein Drittland nicht ausgeschlossen werden; diese erfolgt auf Grundlage geeigneter Garantien gemäß Art. 46 DSGVO.`,
         },
         {
-          title: "3. Kontakt per E-Mail",
-          body: `Wenn Sie uns per E-Mail unter ${company.email} kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse, Inhalt der Nachricht sowie ggf. weitere freiwillige Angaben) zur Bearbeitung und Beantwortung Ihrer Anfrage.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen).\n\nWir speichern Ihre Nachricht, bis die Anfrage abschließend bearbeitet ist und darüber hinaus nur solange, wie gesetzliche Aufbewahrungspflichten bestehen oder berechtigte Interessen einer Dokumentation entgegenstehen – in der Regel höchstens drei Jahre.`,
+          title: "3. Kontakt per E-Mail und Kontaktformular",
+          body: `Wenn Sie uns per E-Mail unter ${company.email} kontaktieren oder unser Kontaktformular auf www.aaryx.de nutzen, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse, Unternehmen, Inhalt der Nachricht sowie ggf. weitere freiwillige Angaben) zur Bearbeitung und Beantwortung Ihrer Anfrage.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen). Bei Nutzung des Kontaktformulars erfolgt die Verarbeitung zusätzlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit widerrufen können.\n\nWir speichern Ihre Nachricht, bis die Anfrage abschließend bearbeitet ist und darüber hinaus nur solange, wie gesetzliche Aufbewahrungspflichten bestehen oder berechtigte Interessen einer Dokumentation entgegenstehen – in der Regel höchstens drei Jahre.`,
         },
         {
           title: "4. Cookies und Analyse-Tools",

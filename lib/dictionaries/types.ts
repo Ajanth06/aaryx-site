@@ -71,7 +71,32 @@ export type Dictionary = {
     title: string;
     description: string;
     cta: string;
+    ctaCall: string;
     mailSubject: string;
+  };
+  contactPage: {
+    metaTitle: string;
+    metaDescription: string;
+    label: string;
+    title: string;
+    description: string;
+    fields: {
+      name: string;
+      email: string;
+      company: string;
+      message: string;
+      privacyBefore: string;
+      privacyLink: string;
+      privacyAfter: string;
+    };
+    submit: string;
+    sending: string;
+    successTitle: string;
+    successBody: string;
+    errorTitle: string;
+    errorBody: string;
+    errorNotConfigured: string;
+    mailFallback: string;
   };
   footer: {
     description: string;

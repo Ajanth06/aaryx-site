@@ -139,7 +139,36 @@ export const en: Dictionary = {
     description:
       "Connect with AARYX to discuss sourcing, procurement and international business opportunities.",
     cta: "Start a Project",
+    ctaCall: "Schedule a Call",
     mailSubject: "AARYX supply chain project",
+  },
+  contactPage: {
+    metaTitle: "Contact | AARYX",
+    metaDescription:
+      "Send a project enquiry to AARYX – procurement and international business solutions between Europe and Asia.",
+    label: "Contact",
+    title: "Start a project",
+    description:
+      "Tell us briefly about your project. We usually reply within 1–2 business days.",
+    fields: {
+      name: "Name",
+      email: "Email",
+      company: "Company (optional)",
+      message: "Message",
+      privacyBefore: "I have read the ",
+      privacyLink: "privacy policy",
+      privacyAfter:
+        " and consent to the processing of my data to handle my enquiry.",
+    },
+    submit: "Send enquiry",
+    sending: "Sending …",
+    successTitle: "Thank you",
+    successBody: "Your enquiry has been received. We will get back to you shortly.",
+    errorTitle: "Could not send",
+    errorBody: "Please try again or email us directly at contact@aaryx.de.",
+    errorNotConfigured:
+      "The contact form is temporarily unavailable. Please email us directly.",
+    mailFallback: "Contact by email",
   },
   footer: {
     description:
@@ -205,8 +234,8 @@ export const en: Dictionary = {
           body: `When you access this website, the hosting provider automatically stores information in server log files. This includes in particular:\n• IP address\n• date and time of the request\n• browser type and version\n• operating system\n• referrer URL\n• pages and files accessed\n\nProcessing is based on Art. 6 (1) lit. f GDPR. Our legitimate interest is the secure provision and trouble-free operation of our website.\n\nHosting provider: ${hosting.provider}, ${hosting.address}.\nFurther information is available at: ${hosting.privacyPolicy}\n\nLog files are retained in accordance with the hosting provider's policies and only for as long as required for secure operation of the website. As the hosting provider is based in the USA, a transfer of data to a third country cannot be ruled out; such transfers are carried out on the basis of appropriate safeguards pursuant to Art. 46 GDPR.`,
         },
         {
-          title: "3. Contact by email",
-          body: `If you contact us by email at ${company.email}, we process the data you provide (e.g. name, email address, message content and any other voluntary details) to handle and respond to your enquiry.\n\nLegal basis: Art. 6 (1) lit. b GDPR where your enquiry relates to the performance of a contract or pre-contractual measures, otherwise Art. 6 (1) lit. f GDPR (legitimate interest in handling enquiries).\n\nWe retain your message until your enquiry has been fully processed and thereafter only for as long as statutory retention obligations apply or legitimate interests in documentation require – as a rule no longer than three years.`,
+          title: "3. Contact by email and contact form",
+          body: `If you contact us by email at ${company.email} or use our contact form at www.aaryx.de, we process the data you provide (e.g. name, email address, company, message content and any other voluntary details) to handle and respond to your enquiry.\n\nLegal basis: Art. 6 (1) lit. b GDPR where your enquiry relates to the performance of a contract or pre-contractual measures, otherwise Art. 6 (1) lit. f GDPR (legitimate interest in handling enquiries). When using the contact form, processing is additionally based on your consent (Art. 6 (1) lit. a GDPR), which you may withdraw at any time.\n\nWe retain your message until your enquiry has been fully processed and thereafter only for as long as statutory retention obligations apply or legitimate interests in documentation require – as a rule no longer than three years.`,
         },
         {
           title: "4. Cookies and analytics tools",
