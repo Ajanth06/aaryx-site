@@ -13,6 +13,8 @@ export type Dictionary = {
   };
   nav: {
     services: string;
+    medsafeUdi: string;
+    cases: string;
     network: string;
     industries: string;
     contact: string;
@@ -69,6 +71,17 @@ export type Dictionary = {
     title: string;
     description: string;
     items: Array<{ title: string; copy: string; icon: string }>;
+  };
+  medsafeUdi: {
+    label: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    detail: string;
+    supportTitle: string;
+    supportItems: string[];
+    cta: string;
+    href: string;
   };
   network: {
     label: string;

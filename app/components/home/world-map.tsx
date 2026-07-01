@@ -21,7 +21,7 @@ export function WorldMap({ dict }: HomeSectionProps) {
         </div>
         <ServiceIcon name="globe" />
       </div>
-      <svg aria-label={n.mapAria} role="img" viewBox="0 0 240 128">
+      <svg aria-label={n.mapAria} className="h-auto w-full" role="img" viewBox="0 0 240 128">
         <defs>
           <filter id="mapGlow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="2.5" result="blur" />

@@ -5,6 +5,7 @@ import {
   homeSectionHeader,
   homeSectionInner,
   homeSectionPadding,
+  homeSectionScrollMargin,
   homeSectionTitle,
   homeCardTitle,
 } from "./section-styles";
@@ -12,7 +13,7 @@ import type { HomeSectionProps } from "./types";
 
 export function ServicesSection({ dict }: HomeSectionProps) {
   return (
-    <section className={`border-t border-[#171717]/10 ${homeSectionPadding}`} id="services">
+    <section className={`border-t border-[#171717]/10 ${homeSectionPadding} ${homeSectionScrollMargin}`} id="services">
       <div className={homeSectionInner}>
         <div className={homeSectionHeader}>
           <SectionLabel>{dict.services.label}</SectionLabel>
@@ -30,7 +31,7 @@ export function ServicesSection({ dict }: HomeSectionProps) {
               <div className="grid size-11 place-items-center rounded-full bg-[#f7f3ea] text-[#d24b2f] sm:size-12">
                 {isIconName(item.icon) ? <ServiceIcon name={item.icon} /> : null}
               </div>
-              <h3 className={`mt-6 text-xl sm:mt-8 sm:text-2xl lg:text-3xl ${homeCardTitle}`}>
+              <h3 className={`mt-6 text-lg sm:mt-8 sm:text-2xl lg:text-3xl ${homeCardTitle}`}>
                 {item.title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-[#3f3a32]/70 sm:mt-4 sm:text-base sm:leading-7">

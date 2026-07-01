@@ -34,8 +34,8 @@ export function LangSwitcher({
             aria-current={isActive ? "page" : undefined}
             className={
               isActive
-                ? "rounded-full bg-[#171717] px-2.5 py-1 text-white"
-                : "rounded-full px-2.5 py-1 text-[#171717]/55 transition hover:text-[#171717]"
+                ? "inline-flex min-h-9 min-w-9 items-center justify-center rounded-full bg-[#171717] px-3 py-1.5 text-white"
+                : "inline-flex min-h-9 min-w-9 items-center justify-center rounded-full px-3 py-1.5 text-[#171717]/55 transition hover:text-[#171717]"
             }
             href={href}
             key={item}

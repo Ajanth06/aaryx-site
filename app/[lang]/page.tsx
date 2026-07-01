@@ -3,6 +3,7 @@ import { CasesSection } from "@/app/components/home/cases-section";
 import { ContactSection } from "@/app/components/home/contact-section";
 import { HeroSection } from "@/app/components/home/hero-section";
 import { IndustriesSection } from "@/app/components/home/industries-section";
+import { MedsafeUdiSection } from "@/app/components/home/medsafe-udi-section";
 import { NetworkSection } from "@/app/components/home/network-section";
 import { ServicesSection } from "@/app/components/home/services-section";
 import { SiteFooter } from "@/app/components/home/site-footer";
@@ -42,6 +43,7 @@ export default async function Page({ params }: PageProps) {
       <HeroSection dict={dict} {...links} />
       <TrustSection dict={dict} />
       <ServicesSection dict={dict} />
+      <MedsafeUdiSection dict={dict} />
       <CasesSection dict={dict} />
       <NetworkSection dict={dict} />
       <IndustriesSection dict={dict} />

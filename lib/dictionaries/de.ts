@@ -18,6 +18,8 @@ export const de: Dictionary = {
   },
   nav: {
     services: "Leistungen",
+    medsafeUdi: "MedSafe UDI",
+    cases: "Beispielprojekte",
     network: "Netzwerk",
     industries: "Branchen",
     contact: "Kontakt",
@@ -25,7 +27,7 @@ export const de: Dictionary = {
   },
   hero: {
     label: "Beschaffung & internationales Geschäft",
-    title: "Beschaffungs- & Business-Lösungen zwischen Europa und Asien",
+    title: "Beschaffungs & Business Lösungen zwischen Europa und Asien",
     description:
       "Von der Lieferantensuche in Asien bis zum strukturierten RFQ in Europa. AARYX macht internationale Beschaffung beherrschbar.",
     ctaProject: "Projekt starten",
@@ -194,6 +196,25 @@ export const de: Dictionary = {
         icon: "briefcase",
       },
     ],
+  },
+  medsafeUdi: {
+    label: "MedSafe UDI",
+    title: "MedSafe UDI Solutions",
+    subtitle: "Digitale Rückverfolgbarkeit für Medizinprodukte",
+    description:
+      "AARYX unterstützt Hersteller von Medizinprodukten bei der Einführung und Implementierung der MedSafe UDI-Lösung für digitales UDI-Management, Rückverfolgbarkeit und regulatorische Compliance gemäß EU MDR und ISO 13485.",
+    detail:
+      "Mit MedSafe UDI lassen sich Basic UDI-DI, UDI-DI und weitere produktbezogene UDI-Daten zentral verwalten und für den EUDAMED-konformen XML Bulk Upload vorbereiten. Dadurch werden manuelle Dateneingaben reduziert, Datenqualität verbessert und regulatorische Prozesse deutlich effizienter gestaltet.",
+    supportTitle: "Unsere Unterstützung",
+    supportItems: [
+      "Einführung der MedSafe UDI-Lösung",
+      "UDI-Datenmanagement",
+      "Rückverfolgbarkeit von Medizinprodukten",
+      "Integration in Qualitätsmanagementsysteme",
+      "Unterstützung bei regulatorischen Anforderungen",
+    ],
+    cta: "Mehr über MedSafe UDI",
+    href: "https://medsafe-udi.com",
   },
   network: {
     label: "Internationales Netzwerk",

@@ -4,6 +4,7 @@ import {
   homeSectionHeader,
   homeSectionInner,
   homeSectionPadding,
+  homeSectionScrollMargin,
   homeSectionTitle,
 } from "./section-styles";
 import type { HomeSectionProps } from "./types";
@@ -12,7 +13,7 @@ export function CasesSection({ dict }: HomeSectionProps) {
   const c = dict.cases;
 
   return (
-    <section className={`border-t border-[#171717]/10 bg-white ${homeSectionPadding}`} id="cases">
+    <section className={`border-t border-[#171717]/10 ${homeSectionPadding} ${homeSectionScrollMargin}`} id="cases">
       <div className={homeSectionInner}>
         <div className={homeSectionHeader}>
           <SectionLabel>{c.label}</SectionLabel>
@@ -22,10 +23,10 @@ export function CasesSection({ dict }: HomeSectionProps) {
         <div className={`${homeSectionGrid} grid gap-4 sm:grid-cols-2 sm:gap-6`}>
           {c.items.map((item) => (
             <article
-              className="flex flex-col rounded-[1.35rem] border border-[#171717]/10 bg-[#f7f3ea] p-5 sm:p-7"
+              className="flex flex-col rounded-[1.35rem] border border-[#171717]/10 bg-white p-5 shadow-sm shadow-[#171717]/5 transition hover:-translate-y-1 hover:border-[#d24b2f]/40 hover:shadow-xl hover:shadow-[#171717]/10 sm:p-7"
               key={item.industry}
             >
-              <span className="inline-flex w-fit max-w-full rounded-full bg-[#d24b2f]/10 px-3 py-1 text-[11px] font-bold uppercase leading-snug tracking-[0.1em] text-[#d24b2f] sm:text-xs sm:tracking-[0.12em]">
+              <span className="inline-flex w-fit max-w-full rounded-full bg-[#d24b2f]/10 px-3 py-1 text-[11px] font-bold uppercase leading-snug tracking-[0.1em] text-[#d24b2f] break-words sm:text-xs sm:tracking-[0.12em]">
                 {item.industry}
               </span>
               <div className="mt-6 space-y-5 text-sm leading-6">

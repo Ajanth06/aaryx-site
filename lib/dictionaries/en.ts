@@ -18,6 +18,8 @@ export const en: Dictionary = {
   },
   nav: {
     services: "Services",
+    medsafeUdi: "MedSafe UDI",
+    cases: "Example projects",
     network: "Network",
     industries: "Industries",
     contact: "Contact",
@@ -194,6 +196,25 @@ export const en: Dictionary = {
         icon: "briefcase",
       },
     ],
+  },
+  medsafeUdi: {
+    label: "MedSafe UDI",
+    title: "MedSafe UDI Solutions",
+    subtitle: "Digital traceability for medical devices",
+    description:
+      "AARYX supports medical device manufacturers with the introduction and implementation of the MedSafe UDI solution for digital UDI management, traceability and regulatory compliance under EU MDR and ISO 13485.",
+    detail:
+      "With MedSafe UDI, Basic UDI-DI, UDI-DI and other product-related UDI data can be managed centrally and prepared for EUDAMED-compliant XML bulk upload. This reduces manual data entry, improves data quality and makes regulatory processes significantly more efficient.",
+    supportTitle: "Our support",
+    supportItems: [
+      "Introduction of the MedSafe UDI solution",
+      "UDI data management",
+      "Medical device traceability",
+      "Integration into quality management systems",
+      "Support with regulatory requirements",
+    ],
+    cta: "Learn more about MedSafe UDI",
+    href: "https://medsafe-udi.com",
   },
   network: {
     label: "International network",

@@ -22,13 +22,13 @@ export function ProcurementDashboard({ dict }: HomeSectionProps) {
             </span>
           </div>
 
-          <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-3 sm:gap-3">
+          <div className="mt-3 grid grid-cols-1 gap-2 min-[400px]:grid-cols-3 sm:mt-4 sm:gap-3">
             {d.metrics.map((metric) => (
               <div
                 className="rounded-2xl border border-[#171717]/10 bg-white p-2.5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#171717]/10 sm:p-3"
                 key={metric.label}
               >
-                <p className="text-[9px] font-bold uppercase leading-snug tracking-[0.08em] text-[#171717]/45 sm:text-[10px] sm:tracking-[0.1em]">
+                <p className="text-[10px] font-bold uppercase leading-snug tracking-[0.08em] text-[#171717]/45 sm:text-[10px] sm:tracking-[0.1em]">
                   {metric.label}
                 </p>
                 <p className="mt-2 text-2xl font-black leading-none sm:mt-3 sm:text-3xl">{metric.value}</p>
@@ -54,8 +54,8 @@ export function ProcurementDashboard({ dict }: HomeSectionProps) {
                 {d.workflow.map((item) => (
                   <div key={item.stage}>
                     <div className="flex justify-between gap-3 text-xs font-bold">
-                      <span>{item.stage}</span>
-                      <span className="text-[#3f3a32]/50">{item.status}</span>
+                      <span className="min-w-0 break-words">{item.stage}</span>
+                      <span className="shrink-0 text-[#3f3a32]/50">{item.status}</span>
                     </div>
                     <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e2d7c3]">
                       <span

@@ -38,11 +38,11 @@ export function HeroSection({
             {dict.hero.ctaCall}
           </a>
         </div>
-        <div className="mt-8 grid max-w-xl grid-cols-3 gap-2 border-y border-[#171717]/10 py-4 sm:mt-10 sm:gap-3 sm:py-5">
+        <div className="mt-8 grid max-w-xl grid-cols-1 gap-3 border-y border-[#171717]/10 py-4 min-[400px]:grid-cols-3 min-[400px]:gap-2 sm:mt-10 sm:gap-3 sm:py-5">
           {dict.hero.facts.map((fact) => (
-            <div key={fact.label}>
-              <p className="text-sm font-black sm:text-lg">{fact.value}</p>
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.08em] text-[#3f3a32]/45 sm:text-[10px] sm:tracking-[0.1em]">
+            <div className="min-[400px]:text-center" key={fact.label}>
+              <p className="text-sm font-black break-words sm:text-lg">{fact.value}</p>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#3f3a32]/45 sm:text-[10px] sm:tracking-[0.1em]">
                 {fact.label}
               </p>
             </div>

@@ -5,19 +5,20 @@ import {
   homeSectionHeader,
   homeSectionInner,
   homeSectionPadding,
+  homeSectionScrollMargin,
   homeSectionTitle,
 } from "./section-styles";
 import type { HomeSectionProps } from "./types";
 
 export function IndustriesSection({ dict }: HomeSectionProps) {
   return (
-    <section className={`border-t border-[#171717]/10 bg-white ${homeSectionPadding}`} id="industries">
+    <section className={`border-t border-[#171717]/10 bg-white ${homeSectionPadding} ${homeSectionScrollMargin}`} id="industries">
       <div className={homeSectionInner}>
         <div className={homeSectionHeader}>
           <SectionLabel>{dict.industries.label}</SectionLabel>
           <h2 className={homeSectionTitle}>{dict.industries.title}</h2>
         </div>
-        <div className={`${homeSectionGrid} grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 lg:grid-cols-5 lg:gap-4`}>
+        <div className={`${homeSectionGrid} grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 lg:grid-cols-5 lg:gap-4`}>
           {dict.industries.items.map((industry, index) => (
             <div
               className="rounded-2xl border border-[#171717]/10 bg-[#f7f3ea] p-4 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#171717]/10 sm:p-5"

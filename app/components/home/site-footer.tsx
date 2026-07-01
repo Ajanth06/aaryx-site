@@ -5,7 +5,7 @@ type SiteFooterProps = HomeSectionProps & Pick<HomePageLinks, "locale" | "contac
 
 export function SiteFooter({ dict, locale, contactHref }: SiteFooterProps) {
   return (
-    <footer className="border-t border-[#171717]/10 bg-white px-5 py-14 sm:px-8">
+    <footer className="border-t border-[#171717]/10 bg-white px-4 py-12 pb-[max(3rem,env(safe-area-inset-bottom))] sm:px-8 sm:py-14">
       <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <p className="text-2xl font-black tracking-[0.18em]">AARYX</p>
