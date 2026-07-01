@@ -1,4 +1,5 @@
 import { company } from "../company";
+import { hosting, legalMeta, supervisoryAuthority } from "../legal";
 import type { Dictionary } from "./types";
 
 export const de: Dictionary = {
@@ -161,22 +162,29 @@ export const de: Dictionary = {
       label: "Rechtliches",
       title: "Impressum",
       intro:
-        "Angaben gemäß § 5 TMG.",
+        "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) bzw. den für Telemedien geltenden Informationspflichten.",
       fields: [
         { label: "Anbieter", value: company.name },
         { label: "Anschrift", value: company.address },
+        { label: "Website", value: legalMeta.website },
         { label: "E-Mail", value: company.email },
         { label: "Vertreten durch", value: company.representative },
         { label: "USt-IdNr.", value: company.vatId },
       ],
       responsibleTitle: "Verantwortlich für den Inhalt",
-      responsibleBody: `${company.responsibleForContent} (Anschrift wie oben)`,
+      responsibleBody: `${company.responsibleForContent}, ${company.address}`,
       disclaimerTitle: "Haftung für Inhalte",
       disclaimerBody:
-        "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
-      disputeTitle: "Streitschlichtung",
+        "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.",
+      linkLiabilityTitle: "Haftung für Links",
+      linkLiabilityBody:
+        "Unser Angebot enthält ggf. Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.",
+      copyrightTitle: "Urheberrecht",
+      copyrightBody:
+        "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",
+      disputeTitle: "Verbraucherstreitbeilegung",
       disputeBody:
-        "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+        "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr. Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
     },
     privacy: {
       metaTitle: "Datenschutz | AARYX",
@@ -185,32 +193,39 @@ export const de: Dictionary = {
       label: "Datenschutz",
       title: "Datenschutzerklärung",
       intro:
-        "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Erklärung beschreibt, welche Daten wir beim Besuch dieser Website verarbeiten. Ergänzen Sie die TODO-Abschnitte mit Ihren tatsächlichen Hosting- und Verarbeitungsdetails vor dem Launch.",
-      lastUpdated: "Stand: Juni 2026 (Entwurf – vor Launch rechtlich prüfen)",
+        "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie darüber, welche personenbezogenen Daten wir beim Besuch von www.aaryx.de verarbeiten, zu welchem Zweck dies geschieht und welche Rechte Ihnen zustehen.",
+      lastUpdated: legalMeta.lastUpdatedDe,
       sections: [
         {
           title: "1. Verantwortlicher",
-          body: `Verantwortlich für die Datenverarbeitung auf dieser Website ist ${company.name}, ${company.address}. Kontakt: ${company.email}.`,
+          body: `Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\n${company.name}\n${company.addressStreet}\n${company.addressCity}\n${company.addressCountryDe}\nE-Mail: ${company.email}`,
         },
         {
           title: "2. Hosting und Server-Logfiles",
-          body: "Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch Informationen in sogenannten Server-Logfiles gespeichert (z. B. IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene URL, Browsertyp). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren Betrieb). TODO: Hosting-Anbieter, Standort und Aufbewahrungsfristen ergänzen.",
+          body: `Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch Informationen in sogenannten Server-Logfiles gespeichert. Hierzu gehören insbesondere:\n• IP-Adresse\n• Datum und Uhrzeit der Anfrage\n• Browsertyp und Browserversion\n• Betriebssystem\n• Referrer-URL\n• aufgerufene Seiten und Dateien\n\nDie Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht in der sicheren Bereitstellung und dem störungsfreien Betrieb unserer Website.\n\nHosting-Anbieter: ${hosting.provider}, ${hosting.address}.\nWeitere Informationen finden Sie unter: ${hosting.privacyPolicy}\n\nDie Speicherdauer der Server-Logfiles richtet sich nach den Vorgaben des Hosting-Anbieters und erfolgt nur so lange, wie dies für den sicheren Betrieb der Website erforderlich ist. Da der Hosting-Anbieter seinen Sitz in den USA hat, kann eine Datenübermittlung in ein Drittland nicht ausgeschlossen werden; diese erfolgt auf Grundlage geeigneter Garantien gemäß Art. 46 DSGVO.`,
         },
         {
           title: "3. Kontakt per E-Mail",
-          body: `Wenn Sie uns per E-Mail (${company.email}) kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse, Nachrichteninhalt) zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO.`,
+          body: `Wenn Sie uns per E-Mail unter ${company.email} kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse, Inhalt der Nachricht sowie ggf. weitere freiwillige Angaben) zur Bearbeitung und Beantwortung Ihrer Anfrage.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen).\n\nWir speichern Ihre Nachricht, bis die Anfrage abschließend bearbeitet ist und darüber hinaus nur solange, wie gesetzliche Aufbewahrungspflichten bestehen oder berechtigte Interessen einer Dokumentation entgegenstehen – in der Regel höchstens drei Jahre.`,
         },
         {
           title: "4. Cookies und Analyse-Tools",
-          body: "Diese Website setzt derzeit keine Tracking-Cookies oder Analyse-Tools ein. Sollten Sie künftig Dienste wie Google Analytics, Matomo oder vergleichbare Tools nutzen, muss dieser Abschnitt entsprechend ergänzt und – falls erforderlich – eine Einwilligung eingeholt werden.",
+          body:
+            "Diese Website setzt derzeit keine Tracking-Cookies ein und verwendet keine Analyse-Tools wie Google Analytics, Google Tag Manager, Microsoft Clarity oder Meta Pixel. Es findet keine Reichweitenmessung und kein nutzerbezogenes Profiling statt.\n\nFür den technischen Betrieb kann unser Hosting-Anbieter kurzlebige, technisch erforderliche Verarbeitungen vornehmen. Sollten wir künftig einwilligungspflichtige Technologien einsetzen, werden wir diese Datenschutzerklärung vorab ergänzen und – soweit erforderlich – eine Einwilligung einholen.",
         },
         {
-          title: "5. Ihre Rechte",
-          body: "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Sie können sich bei einer Datenschutz-Aufsichtsbehörde beschweren. TODO: Zuständige Aufsichtsbehörde ergänzen.",
+          title: "5. Externe Dienste und eingebettete Inhalte",
+          body:
+            "Diese Website bindet keine Inhalte von Drittanbietern ein, etwa Google Fonts, YouTube, Google Maps, reCAPTCHA oder Social-Media-Plugins. Schriften werden über Systemschriften (Arial, Helvetica) bereitgestellt; es erfolgt kein Abruf externer Font-Server.",
         },
         {
-          title: "6. SSL-/TLS-Verschlüsselung",
-          body: "Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie am Schloss-Symbol in der Browserzeile und an „https://“ in der Adresszeile.",
+          title: "6. Ihre Rechte",
+          body: `Sie haben das Recht auf:\n• Auskunft\n• Berichtigung\n• Löschung\n• Einschränkung der Verarbeitung\n• Datenübertragbarkeit\n• Widerspruch gegen die Verarbeitung\n\nAußerdem haben Sie das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an ${company.email}.\n\nZuständige Aufsichtsbehörde:\n${supervisoryAuthority.nameDe}\n${supervisoryAuthority.streetDe}\n${supervisoryAuthority.cityDe}\n${supervisoryAuthority.countryDe}\n${supervisoryAuthority.website}`,
+        },
+        {
+          title: "7. SSL-/TLS-Verschlüsselung",
+          body:
+            "Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie am Schloss-Symbol in der Browserzeile und daran, dass die Adresszeile mit „https://“ beginnt.",
         },
       ],
     },

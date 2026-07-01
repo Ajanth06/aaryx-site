@@ -1,4 +1,5 @@
 import { company } from "../company";
+import { hosting, legalMeta, supervisoryAuthority } from "../legal";
 import type { Dictionary } from "./types";
 
 export const en: Dictionary = {
@@ -161,20 +162,27 @@ export const en: Dictionary = {
       label: "Legal",
       title: "Imprint / Legal Notice",
       intro:
-        "Information pursuant to § 5 TMG (German Telemedia Act).",
+        "Information pursuant to § 5 of the German Digital Services Act (DDG) and applicable telemedia disclosure requirements.",
       fields: [
         { label: "Provider", value: company.name },
         { label: "Address", value: company.address },
+        { label: "Website", value: legalMeta.website },
         { label: "Email", value: company.email },
         { label: "Represented by", value: company.representative },
         { label: "VAT ID", value: company.vatIdEn },
       ],
       responsibleTitle: "Responsible for content",
-      responsibleBody: `${company.responsibleForContent} (address as above)`,
+      responsibleBody: `${company.responsibleForContent}, ${company.address}`,
       disclaimerTitle: "Liability for content",
       disclaimerBody:
-        "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 (1) TMG. However, pursuant to §§ 8 to 10 TMG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity.",
-      disputeTitle: "Dispute resolution",
+        "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 (1) DDG. However, pursuant to §§ 8 to 10 DDG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity. Obligations to remove or block the use of information under general laws remain unaffected.",
+      linkLiabilityTitle: "Liability for links",
+      linkLiabilityBody:
+        "Our website may contain links to external third-party websites over whose content we have no control. We therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. Unlawful content was not recognisable at the time the link was created.",
+      copyrightTitle: "Copyright",
+      copyrightBody:
+        "The content and works created by the site operator on these pages are subject to German copyright law. Duplication, processing, distribution or any form of commercialisation beyond the scope of copyright law requires the written consent of the respective author or creator.",
+      disputeTitle: "Consumer dispute resolution",
       disputeBody:
         "The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr. We are neither obliged nor willing to participate in dispute resolution proceedings before a consumer arbitration board.",
     },
@@ -185,32 +193,39 @@ export const en: Dictionary = {
       label: "Privacy",
       title: "Privacy Policy",
       intro:
-        "Protecting your personal data is important to us. This policy describes what data we process when you visit this website. Complete the TODO sections with your actual hosting and processing details before launch.",
-      lastUpdated: "Last updated: June 2026 (draft – legal review required before launch)",
+        "Protecting your personal data is important to us. This privacy policy explains what personal data we process when you visit www.aaryx.de, for what purpose, and what rights you have.",
+      lastUpdated: legalMeta.lastUpdatedEn,
       sections: [
         {
           title: "1. Data controller",
-          body: `The controller responsible for data processing on this website is ${company.name}, ${company.address}. Contact: ${company.email}.`,
+          body: `The controller responsible for data processing on this website is:\n\n${company.name}\n${company.addressStreet}\n${company.addressCity}\n${company.addressCountryEn}\nEmail: ${company.email}`,
         },
         {
           title: "2. Hosting and server log files",
-          body: "When you access this website, the hosting provider automatically stores information in server log files (e.g. IP address, date and time of request, URL accessed, browser type). Legal basis: Art. 6 (1) lit. f GDPR (legitimate interest in secure operation). TODO: Add hosting provider, server location and retention periods.",
+          body: `When you access this website, the hosting provider automatically stores information in server log files. This includes in particular:\n• IP address\n• date and time of the request\n• browser type and version\n• operating system\n• referrer URL\n• pages and files accessed\n\nProcessing is based on Art. 6 (1) lit. f GDPR. Our legitimate interest is the secure provision and trouble-free operation of our website.\n\nHosting provider: ${hosting.provider}, ${hosting.address}.\nFurther information is available at: ${hosting.privacyPolicy}\n\nLog files are retained in accordance with the hosting provider's policies and only for as long as required for secure operation of the website. As the hosting provider is based in the USA, a transfer of data to a third country cannot be ruled out; such transfers are carried out on the basis of appropriate safeguards pursuant to Art. 46 GDPR.`,
         },
         {
           title: "3. Contact by email",
-          body: `If you contact us by email (${company.email}), we process the data you provide (e.g. name, email address, message content) to handle your enquiry. Legal basis: Art. 6 (1) lit. b GDPR (pre-contractual measures) or Art. 6 (1) lit. f GDPR.`,
+          body: `If you contact us by email at ${company.email}, we process the data you provide (e.g. name, email address, message content and any other voluntary details) to handle and respond to your enquiry.\n\nLegal basis: Art. 6 (1) lit. b GDPR where your enquiry relates to the performance of a contract or pre-contractual measures, otherwise Art. 6 (1) lit. f GDPR (legitimate interest in handling enquiries).\n\nWe retain your message until your enquiry has been fully processed and thereafter only for as long as statutory retention obligations apply or legitimate interests in documentation require – as a rule no longer than three years.`,
         },
         {
-          title: "4. Cookies and analytics",
-          body: "This website currently does not use tracking cookies or analytics tools. If you add services such as Google Analytics, Matomo or similar in the future, this section must be updated and consent obtained where required.",
+          title: "4. Cookies and analytics tools",
+          body:
+            "This website currently does not use tracking cookies or analytics tools such as Google Analytics, Google Tag Manager, Microsoft Clarity or Meta Pixel. No reach measurement or user profiling takes place.\n\nFor technical operation, our hosting provider may carry out short-lived, technically necessary processing. If we introduce consent-based technologies in the future, we will update this privacy policy in advance and obtain consent where required.",
         },
         {
-          title: "5. Your rights",
-          body: "You have the right to access, rectification, erasure, restriction of processing, data portability and objection. You may lodge a complaint with a data protection supervisory authority. TODO: Add the competent supervisory authority.",
+          title: "5. External services and embedded content",
+          body:
+            "This website does not embed third-party content such as Google Fonts, YouTube, Google Maps, reCAPTCHA or social media plugins. Fonts are provided via system fonts (Arial, Helvetica); no external font servers are accessed.",
         },
         {
-          title: "6. SSL/TLS encryption",
-          body: "This website uses SSL/TLS encryption for security. You can recognise an encrypted connection by the lock symbol in your browser and by “https://” in the address bar.",
+          title: "6. Your rights",
+          body: `You have the right to:\n• access\n• rectification\n• erasure\n• restriction of processing\n• data portability\n• object to processing\n\nYou also have the right to lodge a complaint with a data protection supervisory authority. To exercise your rights, an informal message to ${company.email} is sufficient.\n\nCompetent supervisory authority:\n${supervisoryAuthority.nameEn}\n${supervisoryAuthority.streetEn}\n${supervisoryAuthority.cityEn}\n${supervisoryAuthority.countryEn}\n${supervisoryAuthority.website}`,
+        },
+        {
+          title: "7. SSL/TLS encryption",
+          body:
+            "This website uses SSL/TLS encryption for security. You can recognise an encrypted connection by the lock symbol in your browser and by “https://” in the address bar.",
         },
       ],
     },

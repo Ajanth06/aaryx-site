@@ -77,7 +77,9 @@ export default async function PrivacyPage({ params }: PageProps) {
           {privacy.sections.map((section) => (
             <article className="rounded-2xl bg-white p-5" key={section.title}>
               <h2 className="text-xl font-black">{section.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-[#3f3a32]/75">{section.body}</p>
+              <p className="mt-3 whitespace-pre-line text-sm leading-6 text-[#3f3a32]/75">
+                {section.body}
+              </p>
             </article>
           ))}
         </section>

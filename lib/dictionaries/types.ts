@@ -97,6 +97,10 @@ export type Dictionary = {
       responsibleBody: string;
       disclaimerTitle: string;
       disclaimerBody: string;
+      linkLiabilityTitle: string;
+      linkLiabilityBody: string;
+      copyrightTitle: string;
+      copyrightBody: string;
       disputeTitle: string;
       disputeBody: string;
     };

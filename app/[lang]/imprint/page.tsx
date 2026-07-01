@@ -97,6 +97,16 @@ export default async function ImprintPage({ params }: PageProps) {
             <h2 className="text-xl font-black">{legal.disclaimerTitle}</h2>
             <p className="mt-3 text-sm leading-6 text-[#3f3a32]/65">{legal.disclaimerBody}</p>
           </div>
+          <div>
+            <h2 className="text-xl font-black">{legal.linkLiabilityTitle}</h2>
+            <p className="mt-3 text-sm leading-6 text-[#3f3a32]/65">
+              {legal.linkLiabilityBody}
+            </p>
+          </div>
+          <div>
+            <h2 className="text-xl font-black">{legal.copyrightTitle}</h2>
+            <p className="mt-3 text-sm leading-6 text-[#3f3a32]/65">{legal.copyrightBody}</p>
+          </div>
         </section>
 
         <section className="pb-10">
