@@ -12,6 +12,7 @@ export type Dictionary = {
     en: string;
   };
   nav: {
+    home: string;
     services: string;
     medsafeUdi: string;
     cases: string;
@@ -30,6 +31,12 @@ export type Dictionary = {
     mailSubjectProject: string;
     mailSubjectCall: string;
   };
+  homeOverview: {
+    label: string;
+    title: string;
+    description: string;
+    openLabel: string;
+  };
   dashboard: {
     commandCenter: string;
     live: string;
@@ -45,6 +52,10 @@ export type Dictionary = {
       title: string;
       live: string;
       mapAria: string;
+      subtitle: string;
+      hubs: string;
+      day: string;
+      night: string;
     };
   };
   competencies: {
@@ -56,11 +67,15 @@ export type Dictionary = {
     label: string;
     title: string;
     disclaimer: string;
+    ownerLabel: string;
+    confidentialOwner: string;
     situationLabel: string;
     actionLabel: string;
     resultLabel: string;
     items: Array<{
       industry: string;
+      title: string;
+      owner: string;
       situation: string;
       actions: string[];
       result: string;

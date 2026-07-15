@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactForm } from "../../components/contact-form";
-import { LangSwitcher } from "../../components/lang-switcher";
-import { Logo } from "../../components/logo";
+import { SiteFooter } from "@/app/components/home/site-footer";
+import { SiteHeader } from "@/app/components/home/site-header";
 import { getDictionary, isLocale, localizedPath } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
 
@@ -45,27 +44,15 @@ export default async function ContactPage({ params }: PageProps) {
   const copy = dict.contactPage;
 
   return (
-    <main className="min-h-screen bg-[#f7f3ea] px-5 py-8 text-[#171717] sm:px-8">
-      <div className="mx-auto max-w-3xl">
-        <header className="flex items-center justify-between gap-4 border-b border-[#171717]/10 pb-6">
-          <Logo href={localizedPath(lang)} />
-          <div className="flex items-center gap-3">
-            <LangSwitcher
-              deLabel={dict.langSwitcher.de}
-              enLabel={dict.langSwitcher.en}
-              label={dict.langSwitcher.label}
-              locale={lang}
-            />
-            <Link
-              className="text-sm font-bold text-[#171717]/55 transition hover:text-[#171717]"
-              href={localizedPath(lang)}
-            >
-              {dict.legal.backHome}
-            </Link>
-          </div>
-        </header>
-
-        <section className="py-12">
+    <main className="flex min-h-screen w-full flex-col overflow-x-hidden bg-[#f7f3ea] text-[#171717]">
+      <SiteHeader
+        contactHref={localizedPath(lang, "/contact")}
+        dict={dict}
+        homeHref={localizedPath(lang)}
+        locale={lang}
+      />
+      <div className="mx-auto w-full max-w-3xl flex-1 px-5 py-12 sm:px-8 sm:py-16">
+        <section>
           <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d24b2f]">
             {copy.label}
           </p>
@@ -75,6 +62,11 @@ export default async function ContactPage({ params }: PageProps) {
 
         <ContactForm copy={copy} locale={lang} />
       </div>
+      <SiteFooter
+        contactHref={localizedPath(lang, "/contact")}
+        dict={dict}
+        locale={lang}
+      />
     </main>
   );
 }

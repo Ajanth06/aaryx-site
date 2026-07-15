@@ -17,6 +17,7 @@ export const en: Dictionary = {
     en: "EN",
   },
   nav: {
+    home: "Home",
     services: "Services",
     medsafeUdi: "MedSafe UDI",
     cases: "Example projects",
@@ -39,6 +40,13 @@ export const en: Dictionary = {
     ],
     mailSubjectProject: "AARYX project",
     mailSubjectCall: "Schedule a call with AARYX",
+  },
+  homeOverview: {
+    label: "Discover AARYX",
+    title: "Expertise that turns complex challenges into clear next steps.",
+    description:
+      "Choose the area that fits your project. Each page shows at a glance how AARYX can support you.",
+    openLabel: "Explore area",
   },
   dashboard: {
     commandCenter: "Supplier Command Center",
@@ -63,6 +71,10 @@ export const en: Dictionary = {
       title: "Market clocks",
       live: "Live",
       mapAria: "World market map",
+      subtitle: "Global markets",
+      hubs: "Hubs",
+      day: "Day",
+      night: "Night",
     },
   },
   competencies: {
@@ -82,12 +94,16 @@ export const en: Dictionary = {
     title: "How we support companies in practice.",
     disclaimer:
       "The following scenarios illustrate typical projects and support services provided by AARYX.",
+    ownerLabel: "Project owner",
+    confidentialOwner: "Project partner anonymized",
     situationLabel: "Starting point",
     actionLabel: "How AARYX could support",
     resultLabel: "Goal",
     items: [
       {
         industry: "Medical technology",
+        title: "New suppliers for CE-compliant medical technology components",
+        owner: "MEDTECH PARTNER",
         situation:
           "A mid-sized manufacturer in Germany is looking for CE-compliant component suppliers in Asia but has no in-house sourcing team on the ground.",
         actions: [
@@ -101,6 +117,8 @@ export const en: Dictionary = {
       },
       {
         industry: "Quality management (example scenario)",
+        title: "Qualification of a new supplier in Asia",
+        owner: "QUALITY PARTNER",
         situation:
           "A medical technology company wants to qualify a new supplier in Asia. QM documentation does not yet fully meet the requirements.",
         actions: [
@@ -114,6 +132,8 @@ export const en: Dictionary = {
       },
       {
         industry: "Manufacturing (example scenario)",
+        title: "Introduction of a structured RFQ process",
+        owner: "MANUFACTURING PARTNER",
         situation:
           "A manufacturing company wants to structure its RFQ processes and improve visibility over supplier enquiries.",
         actions: [
@@ -126,6 +146,8 @@ export const en: Dictionary = {
       },
       {
         industry: "Industrial components (example scenario)",
+        title: "Alternative suppliers in Vietnam and India",
+        owner: "INDUSTRIAL PARTNER",
         situation:
           "A purchasing team wants to identify alternative suppliers in Vietnam and India.",
         actions: [

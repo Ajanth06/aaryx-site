@@ -17,6 +17,7 @@ export const de: Dictionary = {
     en: "EN",
   },
   nav: {
+    home: "Startseite",
     services: "Leistungen",
     medsafeUdi: "MedSafe UDI",
     cases: "Beispielprojekte",
@@ -39,6 +40,13 @@ export const de: Dictionary = {
     ],
     mailSubjectProject: "AARYX Projekt",
     mailSubjectCall: "Gespräch mit AARYX vereinbaren",
+  },
+  homeOverview: {
+    label: "AARYX entdecken",
+    title: "Expertise, die aus komplexen Aufgaben klare nächste Schritte macht.",
+    description:
+      "Wählen Sie den Bereich, der zu Ihrem Vorhaben passt. Jede Seite zeigt Ihnen kompakt, wie AARYX Sie unterstützen kann.",
+    openLabel: "Bereich öffnen",
   },
   dashboard: {
     commandCenter: "Lieferanten-Kommandozentrale",
@@ -63,6 +71,10 @@ export const de: Dictionary = {
       title: "Marktuhren",
       live: "Live",
       mapAria: "Weltkarte der Marktstandorte",
+      subtitle: "Globale Märkte",
+      hubs: "Standorte",
+      day: "Tag",
+      night: "Nacht",
     },
   },
   competencies: {
@@ -82,12 +94,16 @@ export const de: Dictionary = {
     title: "So unterstützen wir Unternehmen in der Praxis.",
     disclaimer:
       "Die folgenden Szenarien veranschaulichen typische Projekte und Unterstützungsleistungen von AARYX.",
+    ownerLabel: "Projektowner",
+    confidentialOwner: "Projektpartner anonymisiert",
     situationLabel: "Ausgangslage",
     actionLabel: "Mögliche Unterstützung durch AARYX",
     resultLabel: "Ziel",
     items: [
       {
         industry: "Medizintechnik",
+        title: "Neue Lieferanten für CE-konforme Medizintechnik-Komponenten",
+        owner: "MEDTECH PARTNER",
         situation:
           "Ein mittelständischer Hersteller in Deutschland sucht CE-konforme Komponentenlieferanten in Asien, verfügt jedoch über kein eigenes Sourcing-Team vor Ort.",
         actions: [
@@ -101,6 +117,8 @@ export const de: Dictionary = {
       },
       {
         industry: "Qualitätsmanagement (Beispielszenario)",
+        title: "Qualifizierung eines neuen Lieferanten in Asien",
+        owner: "QUALITY PARTNER",
         situation:
           "Ein Medizintechnik-Unternehmen möchte einen neuen Lieferanten in Asien qualifizieren. Die QM-Dokumentation entspricht noch nicht vollständig den Anforderungen.",
         actions: [
@@ -114,6 +132,8 @@ export const de: Dictionary = {
       },
       {
         industry: "Fertigung (Beispielszenario)",
+        title: "Einführung eines strukturierten RFQ-Prozesses",
+        owner: "MANUFACTURING PARTNER",
         situation:
           "Ein Fertigungsunternehmen möchte seine RFQ-Prozesse strukturieren und den Überblick über Lieferantenanfragen verbessern.",
         actions: [
@@ -126,6 +146,8 @@ export const de: Dictionary = {
       },
       {
         industry: "Industriekomponenten (Beispielszenario)",
+        title: "Alternative Lieferanten in Vietnam und Indien",
+        owner: "INDUSTRIAL PARTNER",
         situation:
           "Ein Einkaufsteam möchte alternative Lieferanten in Vietnam und Indien identifizieren.",
         actions: [

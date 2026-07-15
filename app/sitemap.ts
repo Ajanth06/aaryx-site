@@ -1,8 +1,15 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
+import { sectionSlugs } from "@/lib/sections";
 import { siteUrl } from "@/lib/site";
 
-const paths = ["", "/contact", "/imprint", "/privacy"];
+const paths = [
+  "",
+  ...sectionSlugs.map((section) => `/${section}`),
+  "/contact",
+  "/imprint",
+  "/privacy",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

@@ -1,14 +1,8 @@
 import { notFound } from "next/navigation";
-import { CasesSection } from "@/app/components/home/cases-section";
-import { ContactSection } from "@/app/components/home/contact-section";
 import { HeroSection } from "@/app/components/home/hero-section";
-import { IndustriesSection } from "@/app/components/home/industries-section";
-import { MedsafeUdiSection } from "@/app/components/home/medsafe-udi-section";
-import { NetworkSection } from "@/app/components/home/network-section";
-import { ServicesSection } from "@/app/components/home/services-section";
+import { HomeOverviewSection } from "@/app/components/home/home-overview-section";
 import { SiteFooter } from "@/app/components/home/site-footer";
 import { SiteHeader } from "@/app/components/home/site-header";
-import { TrustSection } from "@/app/components/home/trust-section";
 import { getDictionary, isLocale, localizedPath } from "@/lib/i18n";
 import { getBookingHref, isExternalBookingLink } from "@/lib/site";
 
@@ -41,13 +35,7 @@ export default async function Page({ params }: PageProps) {
         locale={links.locale}
       />
       <HeroSection dict={dict} {...links} />
-      <TrustSection dict={dict} />
-      <ServicesSection dict={dict} />
-      <MedsafeUdiSection dict={dict} />
-      <CasesSection dict={dict} />
-      <NetworkSection dict={dict} />
-      <IndustriesSection dict={dict} />
-      <ContactSection dict={dict} {...links} />
+      <HomeOverviewSection dict={dict} locale={links.locale} />
       <SiteFooter dict={dict} locale={links.locale} contactHref={links.contactHref} />
     </main>
   );

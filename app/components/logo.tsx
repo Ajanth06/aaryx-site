@@ -5,6 +5,7 @@ type LogoProps = {
   showClaim?: boolean;
   claim?: string;
   className?: string;
+  prominent?: boolean;
 };
 
 export function Logo({
@@ -12,21 +13,38 @@ export function Logo({
   showClaim = false,
   claim,
   className = "",
+  prominent = false,
 }: LogoProps) {
   return (
     <Link
-      className={`inline-flex min-w-0 items-start gap-2 text-[#171717] sm:gap-2.5 ${className}`}
+      aria-label="AARYX"
+      className={`group inline-flex min-w-0 items-center text-[#171717] outline-none ${
+        prominent ? "gap-2.5 sm:gap-4" : "gap-2.5"
+      } ${className}`}
       href={href}
     >
-      <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-[#d24b2f] text-[11px] font-black text-white sm:mt-1 sm:size-10 sm:text-sm">
-        AX
+      <span
+        className={`relative grid shrink-0 place-items-center overflow-hidden bg-[#d24b2f] font-black tracking-[-0.06em] text-white shadow-[0_8px_24px_rgba(210,75,47,0.24)] transition duration-300 group-hover:-translate-y-0.5 group-hover:rotate-2 group-hover:shadow-[0_12px_30px_rgba(210,75,47,0.32)] ${
+          prominent
+            ? "size-11 rounded-[0.9rem] text-sm sm:size-14 sm:rounded-[1.1rem] sm:text-lg"
+            : "size-10 rounded-[0.85rem] text-sm"
+        }`}
+      >
+        <span aria-hidden className="absolute inset-[3px] rounded-[inherit] border border-white/25" />
+        <span className="relative">AX</span>
       </span>
-      <span className="flex min-w-0 flex-col gap-0.5 sm:gap-1">
-        <span className="logo-word-shine text-base font-black tracking-[0.14em] sm:text-xl sm:tracking-[0.18em]">
+      <span className="flex min-w-0 flex-col justify-center">
+        <span
+          className={`logo-word-shine font-black leading-none ${
+            prominent
+              ? "text-lg tracking-[0.16em] sm:text-[1.7rem] sm:tracking-[0.2em]"
+              : "text-xl tracking-[0.18em]"
+          }`}
+        >
           AARYX
         </span>
         {showClaim && claim ? (
-          <span className="text-[10px] font-black leading-[1.35] text-[#d24b2f] sm:max-w-xs sm:text-[11px] sm:leading-tight lg:max-w-sm">
+          <span className="mt-1 hidden max-w-sm text-[11px] font-bold leading-tight text-[#d24b2f] sm:block lg:text-xs">
             {claim}
           </span>
         ) : null}
