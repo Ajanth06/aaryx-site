@@ -3,24 +3,28 @@
 :root {
   --background: #f7f3ea;
   --foreground: #171717;
+  --accent: #d24b2f;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --color-accent: var(--accent);
+  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-html,
-body {
-  background: var(--background);
+  font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -29,34 +33,52 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* ── Animations ─────────────────────────────────────── */
+
 @keyframes fade-up {
   from {
     opacity: 0;
     transform: translateY(16px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes market-route-flow {
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
   to {
-    stroke-dashoffset: -1;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-@keyframes market-node-pulse {
-  0% {
-    opacity: 0.8;
-    transform: scale(0.7);
-  }
+/* Stagger delay utilities — combine with motion-safe:animate-[…_both] */
+.stagger-1 { animation-delay:  60ms; }
+.stagger-2 { animation-delay: 120ms; }
+.stagger-3 { animation-delay: 180ms; }
+.stagger-4 { animation-delay: 240ms; }
+.stagger-5 { animation-delay: 300ms; }
+.stagger-6 { animation-delay: 360ms; }
 
-  100% {
-    opacity: 0;
-    transform: scale(2.4);
-  }
+/* ── World-map / market animations ──────────────────── */
+
+@keyframes market-route-flow {
+  to { stroke-dashoffset: -1; }
+}
+
+@keyframes market-node-pulse {
+  0%   { opacity: 0.8; transform: scale(0.7); }
+  100% { opacity: 0;   transform: scale(2.4); }
 }
 
 .hero-grid {
@@ -78,15 +100,11 @@ body {
   transform-origin: center;
 }
 
-@keyframes logo-word-shine {
-  0% {
-    background-position: 160% center;
-  }
+/* ── Logo shine ─────────────────────────────────────── */
 
-  45%,
-  100% {
-    background-position: -60% center;
-  }
+@keyframes logo-word-shine {
+  0%       { background-position: 160% center; }
+  45%, 100% { background-position: -60% center; }
 }
 
 .logo-word-shine {
@@ -115,5 +133,14 @@ body {
   .market-route,
   .market-node-ring {
     animation: none;
+  }
+
+  .stagger-1,
+  .stagger-2,
+  .stagger-3,
+  .stagger-4,
+  .stagger-5,
+  .stagger-6 {
+    animation-delay: 0ms;
   }
 }
