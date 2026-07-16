@@ -15,7 +15,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background: var(--background);
 }
 
@@ -33,7 +32,7 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* ── Animations ─────────────────────────────────────── */
+/* ── Animations ──────────────────────────────────────── */
 
 @keyframes fade-up {
   from {
