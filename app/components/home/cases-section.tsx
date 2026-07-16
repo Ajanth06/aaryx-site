@@ -1,5 +1,5 @@
 "use client";
-
+// v2
 import Image, { type StaticImageData } from "next/image";
 import { useState } from "react";
 import industrialComponentsImage from "@/public/images/cases/industrial-components.jpg";
