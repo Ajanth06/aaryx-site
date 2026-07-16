@@ -1,13 +1,14 @@
+"use client";
+
 import Image, { type StaticImageData } from "next/image";
+import { useState } from "react";
 import industrialComponentsImage from "@/public/images/cases/industrial-components.jpg";
 import manufacturingRfqImage from "@/public/images/cases/manufacturing-rfq.jpg";
 import medicalTechnologyImage from "@/public/images/cases/medical-technology.jpg";
 import qualityManagementImage from "@/public/images/cases/quality-management.jpg";
-import { SectionLabel } from "../ui/section-label";
 import { ServiceIcon, type IconName } from "../ui/service-icon";
 import {
   homeSectionInner,
-  homeSectionPadding,
   homeSectionScrollMargin,
 } from "./section-styles";
 import type { HomeSectionProps } from "./types";
@@ -21,138 +22,225 @@ const caseImages: StaticImageData[] = [
 
 const caseIcons: IconName[] = ["shield", "clipboard", "factory", "package"];
 
+const caseColors = [
+  { bg: "bg-[#1a1208]", accent: "bg-[#d24b2f]", border: "border-[#d24b2f]/30" },
+  { bg: "bg-[#0e1318]", accent: "bg-[#2a6496]", border: "border-[#2a6496]/30" },
+  { bg: "bg-[#121208]", accent: "bg-[#7c6a1e]", border: "border-[#c4a82f]/30" },
+  { bg: "bg-[#0e1810]", accent: "bg-[#2a7048]", border: "border-[#2a7048]/30" },
+];
+
 export function CasesSection({ dict }: HomeSectionProps) {
   const c = dict.cases;
-  const total = c.items.length;
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section
-      className={`relative overflow-hidden ${homeSectionPadding} ${homeSectionScrollMargin}`}
+      className={`relative overflow-hidden bg-[#111] px-4 py-16 sm:px-5 sm:py-24 lg:px-8 lg:py-36 ${homeSectionScrollMargin}`}
       id="cases"
     >
+      {/* Subtle noise texture overlay */}
       <div
         aria-hidden
-        className="absolute -right-48 top-24 size-[30rem] rounded-full bg-[#d24b2f]/7 blur-3xl"
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
+        }}
       />
+
       <div className={`relative ${homeSectionInner}`}>
         {/* Section header */}
-        <div className="max-w-4xl border-b border-[#171717]/10 pb-8 sm:pb-10">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <SectionLabel>{c.label}</SectionLabel>
-            {/* Case count badge */}
-            <span className="rounded-full border border-[#171717]/12 bg-white px-3 py-1 font-mono text-xs font-black tracking-[0.12em] text-[#171717]/45">
-              {String(total).padStart(2, "0")} {c.label}
-            </span>
-          </div>
-          <h1 className="mt-4 text-[2.15rem] font-black leading-[1.04] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
-            {c.title}
-          </h1>
-          {/* Anonymization notice — more prominent */}
-          <div className="mt-5 flex items-start gap-2.5 rounded-xl border border-[#171717]/8 bg-white/80 px-4 py-3 sm:mt-6">
-            <span
-              aria-hidden
-              className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#171717]/8 text-[#171717]/50"
-            >
-              <svg
-                aria-hidden="true"
-                className="size-3"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
-              </svg>
-            </span>
-            <p className="text-[11px] font-semibold leading-5 text-[#3f3a32]/55 sm:text-xs">
-              {c.disclaimer}
+        <div className="mb-12 flex flex-col gap-6 border-b border-white/10 pb-12 sm:mb-16 sm:flex-row sm:items-end sm:justify-between sm:pb-16">
+          <div>
+            <p className="mb-3 text-[10px] font-black uppercase tracking-[0.25em] text-[#d24b2f]">
+              {c.label}
             </p>
+            <h2 className="text-3xl font-black leading-[1.05] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
+              {c.title}
+            </h2>
+          </div>
+          {/* Anonymization notice */}
+          <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
+            <svg
+              aria-hidden
+              className="size-3.5 shrink-0 text-white/40"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+            </svg>
+            <span className="text-[10px] font-semibold text-white/40">
+              {c.disclaimer}
+            </span>
           </div>
         </div>
 
-        {/* Case cards */}
-        <div className="mt-8 grid gap-5 sm:mt-10 xl:grid-cols-2 xl:gap-6">
-          {c.items.map((item, index) => (
-            <article
-              className="group grid min-w-0 overflow-hidden rounded-[1.35rem] border border-[#171717]/10 bg-white shadow-[0_12px_40px_rgba(23,23,23,0.055)] transition duration-300 hover:-translate-y-1 hover:border-[#d24b2f]/30 hover:shadow-[0_20px_55px_rgba(23,23,23,0.11)] sm:grid-cols-[0.86fr_1.14fr]"
-              key={item.title}
-            >
-              {/* Image */}
-              <div className="relative min-h-64 overflow-hidden bg-[#e2d7c3] sm:min-h-full">
-                <Image
-                  alt=""
-                  className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
-                  fill
-                  placeholder="blur"
-                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 42vw, 22vw"
-                  src={caseImages[index] ?? medicalTechnologyImage}
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-0 bg-gradient-to-t from-[#171717]/30 via-transparent to-transparent"
-                />
-                {/* Index badge — editorial counter */}
-                <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#171717]/65 px-2.5 py-1 font-mono text-[10px] font-black tracking-[0.18em] text-white backdrop-blur-md">
-                  {String(index + 1).padStart(2, "0")}/{String(total).padStart(2, "0")}
-                </span>
-              </div>
+        {/* Case accordion rows */}
+        <div className="space-y-px">
+          {c.items.map((item, index) => {
+            const isOpen = openIndex === index;
+            const color = caseColors[index % caseColors.length];
+            const img = caseImages[index] ?? medicalTechnologyImage;
+            const icon = caseIcons[index] ?? "briefcase";
+            const num = String(index + 1).padStart(2, "0");
 
-              {/* Content */}
-              <div className="flex min-w-0 flex-col p-4 sm:p-5 lg:p-6">
-                <div className="flex items-start gap-2 text-[#d24b2f]">
-                  <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-lg bg-[#d24b2f]/10">
-                    <ServiceIcon name={caseIcons[index] ?? "briefcase"} />
+            return (
+              <div
+                key={item.title}
+                className={`overflow-hidden rounded-2xl border transition-all duration-500 ${isOpen ? `${color.bg} ${color.border}` : "border-white/8 bg-white/4 hover:bg-white/6"}`}
+              >
+                {/* Row header — always visible, clickable */}
+                <button
+                  aria-controls={`case-body-${index}`}
+                  aria-expanded={isOpen}
+                  className="flex w-full cursor-pointer items-center gap-4 px-5 py-5 text-left sm:gap-6 sm:px-8 sm:py-6"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  type="button"
+                >
+                  {/* Number */}
+                  <span
+                    className={`shrink-0 font-mono text-[2rem] font-black leading-none tracking-[-0.06em] sm:text-[3rem] ${isOpen ? "text-white/90" : "text-white/20"} transition-colors duration-300`}
+                  >
+                    {num}
                   </span>
-                  <p className="pt-1 text-[9px] font-black uppercase leading-4 tracking-[0.1em]">
-                    {item.industry}
-                  </p>
-                </div>
 
-                <h2 className="mt-4 text-lg font-black leading-[1.2] tracking-[-0.025em] sm:text-xl">
-                  {item.title}
-                </h2>
+                  {/* Title + industry */}
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className={`text-[9px] font-black uppercase tracking-[0.18em] transition-colors duration-300 ${isOpen ? "text-[#d24b2f]" : "text-white/30"}`}
+                    >
+                      {item.industry}
+                    </p>
+                    <p
+                      className={`mt-0.5 truncate text-sm font-black leading-snug tracking-[-0.02em] sm:text-lg ${isOpen ? "text-white" : "text-white/60"} transition-colors duration-300`}
+                    >
+                      {item.title}
+                    </p>
+                  </div>
 
-                <dl className="mt-5 space-y-3.5 text-[11px] leading-5 sm:text-xs">
-                  <div className="grid grid-cols-[5.7rem_1fr] gap-3">
-                    <dt className="font-black text-[#171717]">{c.ownerLabel}</dt>
-                    <dd aria-label={c.confidentialOwner} className="min-w-0">
-                      <span
+                  {/* Icon + chevron */}
+                  <div className="flex shrink-0 items-center gap-3">
+                    <span
+                      className={`hidden size-9 items-center justify-center rounded-xl sm:grid ${isOpen ? `${color.accent} text-white` : "bg-white/8 text-white/40"} transition-colors duration-300`}
+                    >
+                      <ServiceIcon name={icon} />
+                    </span>
+                    <span
+                      className={`grid size-7 place-items-center rounded-full border transition-all duration-300 ${isOpen ? "border-white/20 bg-white/10 text-white" : "border-white/10 bg-transparent text-white/30"}`}
+                    >
+                      <svg
                         aria-hidden
-                        className="inline-flex select-none items-center gap-2 blur-[1.6px]"
+                        className={`size-3.5 transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.5"
+                        viewBox="0 0 24 24"
                       >
-                        <span className="grid size-6 place-items-center rounded-md bg-[#d24b2f] text-[8px] font-black text-white">
+                        <path d="M12 5v14M5 12h14" />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                {/* Expandable body */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ${isOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"}`}
+                  id={`case-body-${index}`}
+                >
+                  <div className="grid gap-0 border-t border-white/8 lg:grid-cols-[1fr_340px]">
+                    {/* Details panel */}
+                    <div className="space-y-0 divide-y divide-white/8 px-5 py-6 sm:px-8 sm:py-8">
+                      {/* Situation */}
+                      <div className="pb-6">
+                        <p className="mb-2 text-[9px] font-black uppercase tracking-[0.2em] text-white/35">
+                          {c.situationLabel}
+                        </p>
+                        <p className="text-sm leading-relaxed text-white/70 sm:text-[15px]">
+                          {item.situation}
+                        </p>
+                      </div>
+
+                      {/* Actions */}
+                      <div className="py-6">
+                        <p className="mb-3 text-[9px] font-black uppercase tracking-[0.2em] text-white/35">
+                          {c.actionLabel}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {item.actions.map((action) => (
+                            <span
+                              className="rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-[11px] font-semibold text-white/70"
+                              key={action}
+                            >
+                              {action}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Result — full-width highlight bar */}
+                      <div className={`rounded-xl ${color.bg} border ${color.border} px-5 py-4 mt-0`}>
+                        <p className="mb-1 text-[9px] font-black uppercase tracking-[0.2em] text-white/40">
+                          {c.resultLabel}
+                        </p>
+                        <p className="text-sm font-black leading-snug text-white sm:text-base">
+                          {item.result}
+                        </p>
+                      </div>
+
+                      {/* Confidential owner */}
+                      <div className="flex items-center gap-3 pt-6">
+                        <span className="grid size-8 place-items-center rounded-lg bg-[#d24b2f] text-[9px] font-black text-white">
                           AX
                         </span>
-                        <span className="font-black tracking-[0.03em] text-[#171717]/75">
+                        <span
+                          aria-label={c.confidentialOwner}
+                          className="select-none text-sm font-black tracking-wide text-white/20 blur-[3px]"
+                        >
                           {item.owner}
                         </span>
+                      </div>
+                    </div>
+
+                    {/* Image panel — visible on large screens */}
+                    <div className="relative hidden min-h-[280px] lg:block">
+                      <Image
+                        alt=""
+                        className="object-cover"
+                        fill
+                        placeholder="blur"
+                        sizes="340px"
+                        src={img}
+                      />
+                      <div
+                        aria-hidden
+                        className="absolute inset-0 bg-gradient-to-r from-[#111]/80 via-transparent to-transparent"
+                      />
+                      {/* Large number watermark on image */}
+                      <span
+                        aria-hidden
+                        className="absolute bottom-4 right-5 font-mono text-[5rem] font-black leading-none tracking-[-0.08em] text-white/10 select-none"
+                      >
+                        {num}
                       </span>
-                    </dd>
+                    </div>
                   </div>
-
-                  <div className="grid grid-cols-[5.7rem_1fr] gap-3 border-t border-[#171717]/8 pt-3.5">
-                    <dt className="font-black text-[#171717]">{c.situationLabel}</dt>
-                    <dd className="text-[#3f3a32]/68">{item.situation}</dd>
-                  </div>
-
-                  <div className="grid grid-cols-[5.7rem_1fr] gap-3 border-t border-[#171717]/8 pt-3.5">
-                    <dt className="font-black text-[#171717]">{c.actionLabel}</dt>
-                    <dd className="text-[#3f3a32]/68">
-                      {item.actions.join(", ")}
-                    </dd>
-                  </div>
-
-                  {/* Result row — highlighted */}
-                  <div className="grid grid-cols-[5.7rem_1fr] gap-3 rounded-xl bg-[#d24b2f]/8 px-3 py-3 -mx-3">
-                    <dt className="font-black text-[#d24b2f]">{c.resultLabel}</dt>
-                    <dd className="font-bold text-[#171717]">{item.result}</dd>
-                  </div>
-                </dl>
+                </div>
               </div>
-            </article>
-          ))}
+            );
+          })}
+        </div>
+
+        {/* Bottom total counter */}
+        <div className="mt-10 flex items-center justify-end gap-3 border-t border-white/8 pt-6">
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">
+            {String(c.items.length).padStart(2, "0")} {c.label}
+          </span>
         </div>
       </div>
     </section>
