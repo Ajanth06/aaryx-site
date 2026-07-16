@@ -46,7 +46,7 @@ export default async function RootLayout({
   const lang = langHeader && isLocale(langHeader) ? langHeader : defaultLocale;
 
   return (
-    <html lang={lang} className="antialiased">
+    <html lang={lang} className="antialiased bg-background">
       <head>
         <link
           href={`/brand/icon.svg?v=${brandIconVersion}`}
